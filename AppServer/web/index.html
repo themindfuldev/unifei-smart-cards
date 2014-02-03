@@ -1,0 +1,66 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<script type="text/javascript" src="js/dojo/dojo.js"></script>
+<script type="text/javascript" src="js/lib/tinyxmlsax.js"></script>
+<script type="text/javascript" src="js/lib/tinyxmlw3cdom.js"></script>
+<script type="text/javascript">
+<!--         
+dojo.require("dojo.event.*");
+           
+function init()
+{
+   dojo.event.connect(dojo.byId('btnBuscar'), 'onclick', 'indexBuscar');
+   dojo.event.connect(dojo.byId('btnListarTudo'), 'onclick', 'indexListarTudo');
+   dojo.event.connect(dojo.byId('btnAdicionar'), 'onclick', 'indexAdicionar');
+   dojo.event.connect(dojo.byId('btnRemover'), 'onclick', 'indexRemover');
+   dojo.event.connect(dojo.byId('btnCarregar'), 'onclick', 'indexCarregar');
+   
+   dojo.byId('txtResposta').value = "";
+}
+
+dojo.addOnLoad(init);
+//-->
+</script>
+<script type="text/javascript" src="js/appserver.js"></script>
+
+<html>
+   <head>
+      <title>Application Server</title>
+      <link rel="stylesheet" href="css/appserver.css" type="text/css">   
+   </head>
+   <body>      
+      <applet id="applet" code="applet/CardClientApplet.class" 
+              archive="applets/CardClient.jar" width="0" height="0" style="visibility:hidden;">         
+         No JDK 1.6 support for APPLET!!         
+      </applet>     
+      <h2>Application Server<hr></h2>      
+      <table border="0" cellpadding="10" align="center">
+         <tbody>
+            <tr>
+               <td>
+                  Busca: <input type="text" id="txtBusca" value="" size="30" class="campo"/>
+               </td>
+               <td rowspan="2" valign="top">
+                  <input type="button" id="btnBuscar" value="Buscar" style="width:90"></input><br>
+                  <input type="button" id="btnListarTudo" value="Listar tudo" style="width:90"></input><div style="height:20"></div>
+                  <input type="button" id="btnAdicionar" value="Adicionar" style="width:90"></input><br>
+                  <input type="button" id="btnRemover" value="Remover" style="width:90"></input><br><br>
+                  <input type="button" id="btnCarregar" value="Carregar" style="width:90"></input>
+               </td>
+            </tr>
+            <tr>
+               <td><br>Nome&nbsp;/&nbsp;Descrição<br>
+                  <div id="divAplicacoes">  
+                     <select id="listAplicacoes" size="10" style="width:400" class="campo" >
+                     </select>
+                  </div>
+               </td>
+            </tr>
+         </tbody>
+      </table>
+      <hr>
+      <form id='formExibir' method='POST' action='ExibirResposta'>
+         <textarea id='txtResposta' name="resposta" style="visibility: hidden">
+         </textarea>
+      </form>
+   </body>
+</html>

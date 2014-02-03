@@ -1,0 +1,165 @@
+body {
+   font-family: Arial,sans-serif;
+   color: #CCCCCC;
+   line-height: 1.166;	
+   background: #000099;
+}
+
+a {
+   color: #CCCCFF;
+}
+
+b {
+   color: #CCCCFF;
+}
+
+hr {
+   height: 1px;
+}
+
+h2 {
+   font-family: Arial,sans-serif;
+   color: #FFFFCC;
+   line-height: 1.166;	
+}
+
+table {
+   border-collapse: collapse;      
+   border-width: 1px;
+   border-color: #CCCCCC;
+   border-style: solid;
+
+   font-family: Verdana,Arial,sans-serif;
+   font-size: 10pt;  
+   font-weight: bold; 
+}
+
+.campo {
+   background-color: #CCCCCC;
+   font-family: Courier New, Courier, monospaced;  
+   width: 350;
+}
+
+#terminals {
+   width: 200pt;
+   background: #CCCCCC;
+   font-family: Verdana,Arial,sans-serif;
+   font-size: 10pt;
+   font-weight: bold;
+}
+
+
+#status {
+   width: 80pt;
+}
+
+textarea#log {
+   width: 560pt;
+   height: 100pt;
+   background-color: #C0D9D9;
+   border-width: 1pt;
+   border-color: #000000;
+   border-style: solid;
+   overflow: auto;   
+   font-family: Verdana,Arial,sans-serif;
+   color: #000000;
+   font-weight: bold;
+   font-size: 8pt;      
+}
+
+div.alert {
+   position: absolute;
+   top: 470px;
+   left: 230px;
+   margin: 0px;
+   padding: 0px;
+   z-index: 1;
+   width: 280pt;
+   height: 50pt;
+   background-color: #FFCC33;
+   color: #000000;
+   font-weight: bold;
+   font-size: 15pt;      
+   border-width: 1pt;
+   border-color: #000000;
+   border-style: solid;
+   visibility: hidden;
+   cursor: wait;
+}
+
+table.apdutool {    
+   font-size: 10pt;      
+}
+
+table.panel {
+   font-size: 10pt; 
+   border-collapse: collapse;      
+   border-width: 1px;
+   border-color: #CCCCCC;
+   border-style: solid;
+}
+
+table.menu {
+   behavior: url("css/csshover.htc");
+
+   font-size: 10pt; 
+   border-collapse: collapse;      
+   border-width: 1px;
+   border-color: #999999;
+   border-style: solid;
+   cursor: pointer;
+}
+
+.script_titles {
+   font-size: 10pt; 
+   font-family: Courier New, Courier, monospaced;  
+}
+
+input.w20 {
+   text-align: center;
+   font-family: Courier New, Courier, monospaced;  
+   width: 20pt;
+}
+
+input.w38 {
+   text-align: center;
+   font-family: Courier New, Courier, monospaced;
+   width: 38pt;
+}
+
+td.item {
+   background-color: #666699;
+   color: #FFFFFF;
+}
+
+td.item:hover {
+   background-color: #6666FF;
+}
+
+td.submenu {
+   background-color: #333399;
+   font-weight: bold;
+}
+
+td.gap {
+   background-color: #CCCCCC;
+   height: 2px;
+}
+
+td.submenu:hover {
+   background-color: #6666CC;
+}
+
+.dialog {
+   position: absolute;
+   top: 170px;
+   width: 100%;
+   visibility: hidden;
+}
+
+.resposta {
+   font-family: Courier New, Courier, monospaced;  
+   font-size: 10pt;
+   font-weight: bold;   
+   color: #FFFFFF;
+}

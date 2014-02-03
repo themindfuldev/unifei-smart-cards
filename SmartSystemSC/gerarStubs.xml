@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<project name="SmartSystemSC" default="compilacao" basedir=".">
+	<description>
+            Gera stubs RMI.
+	</description>
+	
+	<property name="JC_HOME" value="C:\Arquivos de programas\Java\jck2.2.2"/>
+	<property name="SmartSystemPC" value="..\SmartSystemPC"/>
+
+	<target name="copia">
+		<delete dir="${SmartSystemPC}\src\smartsystem"/>		
+       	<copy todir="${SmartSystemPC}\src\smartsystem">
+       		<fileset dir="src\smartsystem\">       		
+				<include name="**/I*.java" />
+			</fileset>
+	    	</copy>
+	</target>
+	
+	<target name="compilacao" depends="copia">
+      	<rmic base="bin" includes="**/*Impl.class" > 
+        		<classpath>
+        	      	<pathelement location="${JC_HOME}\lib\api.jar"/>
+	        	</classpath>
+      	</rmic>
+    	
+	      <copy todir="${SmartSystemPC}\bin\smartsystem" >
+       		<fileset dir="bin\smartsystem" includes="**/*_Stub.class" />
+    		</copy>
+	</target>
+
+</project>

@@ -1,0 +1,3230 @@
+// converted by version 1.3
+// on Mon Aug 27 16:43:45 BRT 2007
+
+.package smartsystem {
+	.aid 0x1:0x2:0x3:0x4:0x5:0x6:0x7:0x8:0x9:0x0;
+	.version 1.0;
+
+	.imports {
+		0xA0:0x0:0x0:0x0:0x62:0x0:0x1 1.0;		//java/lang
+		0xA0:0x0:0x0:0x0:0x62:0x0:0x3 1.0;		//java/rmi
+		0xA0:0x0:0x0:0x0:0x62:0x1:0x1:0x1 1.0;		//javacard/framework/service
+		0xA0:0x0:0x0:0x0:0x62:0x1:0x1 1.3;		//javacard/framework
+	}
+
+	.applet {
+		0x1:0x2:0x3:0x4:0x5:0x6:0x7:0x8:0x9:0x0:0x0 SmartApplet;
+	}
+
+	.constantPool {
+		// 0
+		instanceFieldRef No No/proximoNo;
+		// 1
+		instanceFieldRef boolean Aplicacao/ativa;
+		// 2
+		instanceFieldRef byte Aplicacao/id;
+		// 3
+		instanceFieldRef byte[] Aplicacao/nome;
+		// 4
+		instanceFieldRef ListaLigada Aplicacao/listaPreferencias;
+		// 5
+		instanceFieldRef byte ListaLigada/tamanho;
+		// 6
+		instanceFieldRef No ListaLigada/noPrimeiro;
+		// 7
+		instanceFieldRef byte[] Login/id;
+		// 8
+		instanceFieldRef byte[] Login/senha;
+		// 9
+		instanceFieldRef IModulo Login/modulo;
+		// 10
+		instanceFieldRef byte ModuloImpl/tipo;
+		// 11
+		instanceFieldRef IGerente ModuloImpl/gerente;
+		// 12
+		instanceFieldRef IUsuario ModuloImpl/usuario;
+		// 13
+		instanceFieldRef PrincipalImpl GerenteImpl/principal;
+		// 14
+		instanceFieldRef ListaLigada GerenteImpl/listaAplicacoes;
+		// 15
+		instanceFieldRef byte Preferencia/id;
+		// 16
+		instanceFieldRef byte[] Preferencia/nome;
+		// 17
+		instanceFieldRef byte[] Preferencia/valor;
+		// 18
+		instanceFieldRef ListaLigada PrincipalImpl/listaLogin;
+		// 19
+		instanceFieldRef 2.6 SmartApplet/dispatcher;
+		// 20
+		instanceFieldRef GerenteImpl UsuarioImpl/gerente;
+		// 21
+		instanceFieldRef IVCard UsuarioImpl/vCard;
+		// 22
+		instanceFieldRef boolean UsuarioImpl/ativo;
+		// 23
+		instanceFieldRef byte[] VCardImpl/title;
+		// 24
+		instanceFieldRef byte[] VCardImpl/foreName;
+		// 25
+		instanceFieldRef byte[] VCardImpl/middleName;
+		// 26
+		instanceFieldRef byte[] VCardImpl/surName;
+		// 27
+		instanceFieldRef byte[] VCardImpl/suffix;
+		// 28
+		instanceFieldRef byte[] VCardImpl/photoURL;
+		// 29
+		instanceFieldRef byte[] VCardImpl/birthDate;
+		// 30
+		instanceFieldRef byte[] VCardImpl/postOfficeAddress;
+		// 31
+		instanceFieldRef byte[] VCardImpl/buildingName;
+		// 32
+		instanceFieldRef byte[] VCardImpl/street;
+		// 33
+		instanceFieldRef byte[] VCardImpl/locality;
+		// 34
+		instanceFieldRef byte[] VCardImpl/region;
+		// 35
+		instanceFieldRef byte[] VCardImpl/postalCode;
+		// 36
+		instanceFieldRef byte[] VCardImpl/country;
+		// 37
+		instanceFieldRef byte[] VCardImpl/tel1;
+		// 38
+		instanceFieldRef byte[] VCardImpl/tel2;
+		// 39
+		instanceFieldRef byte[] VCardImpl/email1;
+		// 40
+		instanceFieldRef byte[] VCardImpl/email2;
+		// 41
+		instanceFieldRef byte[] VCardImpl/url;
+		// 42
+		instanceFieldRef boolean[] VCardImpl/addressType;
+		// 43
+		instanceFieldRef boolean[] VCardImpl/tel1Type;
+		// 44
+		instanceFieldRef boolean[] VCardImpl/tel2Type;
+		// 45
+		virtualMethodRef Aplicacao/getNome()[B;
+		// 46
+		virtualMethodRef Aplicacao/setAtiva(Z)V;
+		// 47
+		classRef 3.15;		// javacard/framework/UserException
+		// 48
+		staticMethodRef 3.15.0()V;		// javacard/framework/UserException.<init>()V
+		// 49
+		staticMethodRef No/<init>()V;
+		// 50
+		staticMethodRef 0.0.0()V;		// java/lang/Object.<init>()V
+		// 51
+		staticMethodRef 2.5.0()V;		// javacard/framework/service/CardRemoteObject.<init>()V
+		// 52
+		virtualMethodRef ListaLigada/inserir(Lsmartsystem/No;B)Z;
+		// 53
+		classRef GerenteImpl;
+		// 54
+		staticMethodRef GerenteImpl/<init>([B[BLsmartsystem/PrincipalImpl;)V;
+		// 55
+		classRef UsuarioImpl;
+		// 56
+		staticMethodRef UsuarioImpl/<init>([B[BLsmartsystem/GerenteImpl;)V;
+		// 57
+		virtualMethodRef Login/getId()[B;
+		// 58
+		virtualMethodRef Login/getSenha()[B;
+		// 59
+		staticMethodRef 3.3.0()V;		// javacard/framework/Applet.<init>()V
+		// 60
+		classRef 2.6;		// javacard/framework/service/Dispatcher
+		// 61
+		staticMethodRef 2.6.0(S)V;		// javacard/framework/service/Dispatcher.<init>(S)V
+		// 62
+		classRef IGerente;
+		// 63
+		classRef 2.4;		// javacard/framework/service/RMIService
+		// 64
+		classRef PrincipalImpl;
+		// 65
+		staticMethodRef PrincipalImpl/<init>()V;
+		// 66
+		staticMethodRef 2.4.0(Ljava/rmi/Remote;)V;		// javacard/framework/service/RMIService.<init>(Ljava/rmi/Remote;)V
+			.descriptor	Ljava/rmi/Remote;	1.0;
+
+		// 67
+		virtualMethodRef 2.6.1(Ljavacard/framework/service/Service;B)V;		// addService(Ljavacard/framework/service/Service;B)V
+			.descriptor	Ljavacard/framework/service/Service;	2.0;
+
+		// 68
+		classRef SmartApplet;
+		// 69
+		staticMethodRef SmartApplet/<init>()V;
+		// 70
+		virtualMethodRef 3.3.1()V;		// register()V
+		// 71
+		virtualMethodRef 2.6.4(Ljavacard/framework/APDU;)V;		// process(Ljavacard/framework/APDU;)V
+			.descriptor	Ljavacard/framework/APDU;	3.10;
+
+		// 72
+		classRef ListaLigada;
+		// 73
+		staticMethodRef VCardImpl/<init>()V;
+		// 74
+		classRef IUsuario;
+		// 75
+		virtualMethodRef GerenteImpl/getAplicacao(B)Lsmartsystem/Aplicacao;;
+		// 76
+		staticMethodRef UsuarioImpl/nextId(Lsmartsystem/Aplicacao;)B;
+		// 77
+		classRef Preferencia;
+		// 78
+		staticMethodRef Preferencia/<init>(B[B[B)V;
+		// 79
+		virtualMethodRef Aplicacao/getListaPreferencias()Lsmartsystem/ListaLigada;;
+		// 80
+		virtualMethodRef Preferencia/getId()B;
+		// 81
+		virtualMethodRef Preferencia/setValor([B)V;
+		// 82
+		virtualMethodRef No/setProximoNo(Lsmartsystem/No;)V;
+		// 83
+		virtualMethodRef Preferencia/getNome()[B;
+		// 84
+		staticMethodRef Login/<init>([B[B)V;
+		// 85
+		staticMethodRef 2.5.1(Ljava/rmi/Remote;)V;		// javacard/framework/service/CardRemoteObject.export(Ljava/rmi/Remote;)V
+			.descriptor	Ljava/rmi/Remote;	1.0;
+
+		// 86
+		virtualMethodRef No/getProximoNo()Lsmartsystem/No;;
+		// 87
+		classRef ModuloImpl;
+		// 88
+		staticMethodRef ModuloImpl/<init>(Lsmartsystem/Login;B)V;
+		// 89
+		staticMethodRef ListaLigada/<init>()V;
+		// 90
+		virtualMethodRef PrincipalImpl/getListaLogin()Lsmartsystem/ListaLigada;;
+		// 91
+		virtualMethodRef ListaLigada/getPrimeiro()Lsmartsystem/No;;
+		// 92
+		classRef Login;
+		// 93
+		virtualMethodRef Login/getModulo()Lsmartsystem/IModulo;;
+		// 94
+		classRef IModulo;
+		// 95
+		virtualMethodRef Login/setId([B)V;
+		// 96
+		classRef VCardImpl;
+		// 97
+		virtualMethodRef VCardImpl/limpar()V;
+		// 98
+		virtualMethodRef ListaLigada/getProximo(Lsmartsystem/No;)Lsmartsystem/No;;
+		// 99
+		staticMethodRef GerenteImpl/nextId()B;
+		// 100
+		classRef Aplicacao;
+		// 101
+		staticMethodRef Aplicacao/<init>(B[BZ)V;
+		// 102
+		virtualMethodRef ListaLigada/inserirNoFinal(Lsmartsystem/No;)Z;
+		// 103
+		virtualMethodRef Aplicacao/getId()B;
+		// 104
+		virtualMethodRef ListaLigada/remover(Lsmartsystem/No;)Z;
+		// 105
+		virtualMethodRef ListaLigada/getTamanho()B;
+		// 106
+		staticMethodRef 3.8.18()V;		// javacard/framework/JCSystem.requestObjectDeletion()V
+	}
+
+	.interface public abstract IGerente 0 {
+
+		.remote;
+
+		.superInterfaces {
+			1.0;		// java/rmi/Remote
+		}
+
+		.method public abstract .remote  alterarSenha([B[B)Z 0 {
+		}
+
+		.method public abstract .remote  definirUsuario([B)Z 1 {
+		}
+
+		.method public abstract .remote  inserirAplicacao([B)B 2 {
+		}
+
+		.method public abstract .remote  removerAplicacao(B)Z 3 {
+		}
+
+		.method public abstract .remote  getIds()[B 4 {
+		}
+
+		.method public abstract .remote  getNomeAplicacao(B)[B 5 {
+		}
+
+		.method public abstract .remote  ativarAplicacao(BZ)Z 6 {
+		}
+
+		.method public abstract .remote  isUsuarioAtivo()Z 7 {
+		}
+
+	}
+
+	.interface public abstract IModulo 1 {
+
+		.remote;
+
+		.superInterfaces {
+			1.0;		// java/rmi/Remote
+		}
+
+		.fields {
+			public static final byte GERENTE = 96;		// B
+			public static final byte USUARIO = 97;		// B
+		}
+
+		.method public abstract .remote  getModulo()Ljava/rmi/Remote; 0 {
+			.descriptor	Ljava/rmi/Remote;	1.0;
+
+		}
+
+		.method public abstract .remote  getTipo()B 1 {
+		}
+
+	}
+
+	.interface public abstract IPrincipal 2 {
+
+		.remote;
+
+		.superInterfaces {
+			1.0;		// java/rmi/Remote
+		}
+
+		.method public abstract .remote  fazerLogin([B[B)Lsmartsystem/IModulo; 0 {
+		}
+
+	}
+
+	.interface public abstract IUsuario 3 {
+
+		.remote;
+
+		.superInterfaces {
+			1.0;		// java/rmi/Remote
+		}
+
+		.method public abstract .remote  alterarNome([B)V 0 {
+		}
+
+		.method public abstract .remote  alterarSenha([B[B)Z 1 {
+		}
+
+		.method public abstract .remote  inserirPreferencia(B[B[B)B 2 {
+		}
+
+		.method public abstract .remote  alterarPreferencia(BB[B)Z 3 {
+		}
+
+		.method public abstract .remote  removerPreferencia(BB)Z 4 {
+		}
+
+		.method public abstract .remote  getPreferenciaIds(B)[B 5 {
+		}
+
+		.method public abstract .remote  getPreferenciaNome(BB)[B 6 {
+		}
+
+		.method public abstract .remote  isAtivo()Z 7 {
+		}
+
+		.method public abstract .remote  setAtivo(Z)V 8 {
+		}
+
+		.method public abstract .remote  getVCard()Lsmartsystem/IVCard; 9 {
+		}
+
+	}
+
+	.interface public abstract IVCard 4 {
+
+		.remote;
+
+		.superInterfaces {
+			1.0;		// java/rmi/Remote
+		}
+
+		.method public abstract .remote  getAddressType()[Z 0 {
+		}
+
+		.method public abstract .remote  setAddressType([Z)V 1 {
+		}
+
+		.method public abstract .remote  getBirthDate()[B 2 {
+		}
+
+		.method public abstract .remote  setBirthDate([B)V 3 {
+		}
+
+		.method public abstract .remote  getBuildingName()[B 4 {
+		}
+
+		.method public abstract .remote  setBuildingName([B)V 5 {
+		}
+
+		.method public abstract .remote  getCountry()[B 6 {
+		}
+
+		.method public abstract .remote  setCountry([B)V 7 {
+		}
+
+		.method public abstract .remote  getEmail1()[B 8 {
+		}
+
+		.method public abstract .remote  setEmail1([B)V 9 {
+		}
+
+		.method public abstract .remote  getEmail2()[B 10 {
+		}
+
+		.method public abstract .remote  setEmail2([B)V 11 {
+		}
+
+		.method public abstract .remote  getForeName()[B 12 {
+		}
+
+		.method public abstract .remote  setForeName([B)V 13 {
+		}
+
+		.method public abstract .remote  getLocality()[B 14 {
+		}
+
+		.method public abstract .remote  setLocality([B)V 15 {
+		}
+
+		.method public abstract .remote  getMiddleName()[B 16 {
+		}
+
+		.method public abstract .remote  setMiddleName([B)V 17 {
+		}
+
+		.method public abstract .remote  getPhotoURL()[B 18 {
+		}
+
+		.method public abstract .remote  setPhotoURL([B)V 19 {
+		}
+
+		.method public abstract .remote  getPostalCode()[B 20 {
+		}
+
+		.method public abstract .remote  setPostalCode([B)V 21 {
+		}
+
+		.method public abstract .remote  getPostOfficeAddress()[B 22 {
+		}
+
+		.method public abstract .remote  setPostOfficeAddress([B)V 23 {
+		}
+
+		.method public abstract .remote  getRegion()[B 24 {
+		}
+
+		.method public abstract .remote  setRegion([B)V 25 {
+		}
+
+		.method public abstract .remote  getStreet()[B 26 {
+		}
+
+		.method public abstract .remote  setStreet([B)V 27 {
+		}
+
+		.method public abstract .remote  getSuffix()[B 28 {
+		}
+
+		.method public abstract .remote  setSuffix([B)V 29 {
+		}
+
+		.method public abstract .remote  getSurName()[B 30 {
+		}
+
+		.method public abstract .remote  setSurName([B)V 31 {
+		}
+
+		.method public abstract .remote  getTel1()[B 32 {
+		}
+
+		.method public abstract .remote  setTel1([B)V 33 {
+		}
+
+		.method public abstract .remote  getTel1Type()[Z 34 {
+		}
+
+		.method public abstract .remote  setTel1Type([Z)V 35 {
+		}
+
+		.method public abstract .remote  getTel2()[B 36 {
+		}
+
+		.method public abstract .remote  setTel2([B)V 37 {
+		}
+
+		.method public abstract .remote  getTel2Type()[Z 38 {
+		}
+
+		.method public abstract .remote  setTel2Type([Z)V 39 {
+		}
+
+		.method public abstract .remote  getTitle()[B 40 {
+		}
+
+		.method public abstract .remote  setTitle([B)V 41 {
+		}
+
+		.method public abstract .remote  getUrl()[B 42 {
+		}
+
+		.method public abstract .remote  setUrl([B)V 43 {
+		}
+
+	}
+
+	.class public No 5 extends 0.0 {		// extends java/lang/Object
+
+		.fields {
+			private No proximoNo 0;		// Lsmartsystem/No;
+		}
+
+		.publicMethodTable 1 {
+			equals(Ljava/lang/Object;)Z;
+		}
+
+		.packageMethodTable 0 {
+			getProximoNo()Lsmartsystem/No;;
+			setProximoNo(Lsmartsystem/No;)V;
+		}
+
+		.method public <init>()V 0 {
+			.stack 1;
+			.locals 0;
+
+				L0:	aload_0;
+					invokespecial 50;		// java/lang/Object.<init>()V
+					return;
+		}
+
+		.method  getProximoNo()Lsmartsystem/No; 128 {
+			.stack 1;
+			.locals 0;
+
+				L0:	getfield_a_this 0;		// reference smartsystem/No.proximoNo
+					areturn;
+		}
+
+		.method  setProximoNo(Lsmartsystem/No;)V 129 {
+			.stack 2;
+			.locals 0;
+
+				L0:	aload_0;
+					aload_1;
+					putfield_a 0;		// reference smartsystem/No.proximoNo
+					return;
+		}
+
+	}
+
+	.class public Aplicacao 6 extends No {
+
+		.fields {
+			private byte[] nome 0;		// [B
+			private ListaLigada listaPreferencias 1;		// Lsmartsystem/ListaLigada;
+			private boolean ativa 2;		// Z
+			private byte id 3;		// B
+		}
+
+		.publicMethodTable 1 {
+			equals(Ljava/lang/Object;)Z;
+			getAtiva()Z;
+			getId()B;
+			getNome()[B;
+			setAtiva(Z)V;
+			setNome([B)V;
+			getListaPreferencias()Lsmartsystem/ListaLigada;;
+		}
+
+		.packageMethodTable 2 {
+			getProximoNo()Lsmartsystem/No;;
+			setProximoNo(Lsmartsystem/No;)V;
+		}
+
+		.method public <init>(B[BZ)V 0 {
+			.stack 3;
+			.locals 0;
+
+				L0:	aload_0;
+					invokespecial 49;		// smartsystem/No.<init>()V
+					aload_0;
+					sload_3;
+					putfield_b 1;		// boolean smartsystem/Aplicacao.ativa
+					aload_0;
+					sload_1;
+					putfield_b 2;		// byte smartsystem/Aplicacao.id
+					aload_0;
+					aload_2;
+					putfield_a 3;		// reference smartsystem/Aplicacao.nome
+					aload_0;
+					new 72;		// smartsystem/ListaLigada
+					dup;
+					invokespecial 89;		// smartsystem/ListaLigada.<init>()V
+					putfield_a 4;		// reference smartsystem/Aplicacao.listaPreferencias
+					return;
+		}
+
+		.method public getAtiva()Z 1 {
+			.stack 1;
+			.locals 0;
+
+				L0:	getfield_b_this 1;		// boolean smartsystem/Aplicacao.ativa
+					sreturn;
+		}
+
+		.method public getId()B 2 {
+			.stack 1;
+			.locals 0;
+
+				L0:	getfield_b_this 2;		// byte smartsystem/Aplicacao.id
+					sreturn;
+		}
+
+		.method public getNome()[B 3 {
+			.stack 1;
+			.locals 0;
+
+				L0:	getfield_a_this 3;		// reference smartsystem/Aplicacao.nome
+					areturn;
+		}
+
+		.method public setAtiva(Z)V 4 {
+			.stack 2;
+			.locals 0;
+
+				L0:	aload_0;
+					sload_1;
+					putfield_b 1;		// boolean smartsystem/Aplicacao.ativa
+					return;
+		}
+
+		.method public setNome([B)V 5 {
+			.stack 2;
+			.locals 0;
+
+				L0:	aload_0;
+					aload_1;
+					putfield_a 3;		// reference smartsystem/Aplicacao.nome
+					return;
+		}
+
+		.method public getListaPreferencias()Lsmartsystem/ListaLigada; 6 {
+			.stack 1;
+			.locals 0;
+
+				L0:	getfield_a_this 4;		// reference smartsystem/Aplicacao.listaPreferencias
+					areturn;
+		}
+
+	}
+
+	.class public ListaLigada 7 extends 0.0 {		// extends java/lang/Object
+
+		.fields {
+			private No noPrimeiro 0;		// Lsmartsystem/No;
+			private byte tamanho 1;		// B
+		}
+
+		.publicMethodTable 1 {
+			equals(Ljava/lang/Object;)Z;
+			inserirNoFinal(Lsmartsystem/No;)Z;
+			inserir(Lsmartsystem/No;B)Z;
+			remover(Lsmartsystem/No;)Z;
+			get(B)Lsmartsystem/No;;
+			getPrimeiro()Lsmartsystem/No;;
+			getProximo(Lsmartsystem/No;)Lsmartsystem/No;;
+			getTamanho()B;
+		}
+
+		.packageMethodTable 0 {
+		}
+
+		.method public <init>()V 0 {
+			.stack 1;
+			.locals 0;
+
+				L0:	aload_0;
+					invokespecial 50;		// java/lang/Object.<init>()V
+					return;
+		}
+
+		.method public inserirNoFinal(Lsmartsystem/No;)Z 1 {
+			.stack 3;
+			.locals 0;
+
+				L0:	aload_0;
+					aload_1;
+					getfield_b_this 5;		// byte smartsystem/ListaLigada.tamanho
+					invokevirtual 52;		// inserir(Lsmartsystem/No;B)Z
+					sreturn;
+		}
+
+		.method public inserir(Lsmartsystem/No;B)Z 2 {
+			.stack 3;
+			.locals 3;
+
+				L0:	aload_1;
+					ifnonnull L2;
+				L1:	sconst_0;
+					sreturn;
+				L2:	sload_2;
+					getfield_b_this 5;		// byte smartsystem/ListaLigada.tamanho
+					if_scmpgt L4;
+				L3:	sload_2;
+					ifge L5;
+				L4:	sconst_0;
+					sreturn;
+				L5:	sload_2;
+					ifne L7;
+				L6:	aload_1;
+					getfield_a_this 6;		// reference smartsystem/ListaLigada.noPrimeiro
+					invokevirtual 82;		// setProximoNo(Lsmartsystem/No;)V
+					aload_0;
+					aload_1;
+					putfield_a 6;		// reference smartsystem/ListaLigada.noPrimeiro
+					aload_0;
+					dup;
+					getfield_b 5;		// byte smartsystem/ListaLigada.tamanho
+					sconst_1;
+					sadd;
+					s2b;
+					putfield_b 5;		// byte smartsystem/ListaLigada.tamanho
+					sconst_1;
+					sreturn;
+				L7:	getfield_a_this 6;		// reference smartsystem/ListaLigada.noPrimeiro
+					astore_3;
+				L8:	aload_3;
+					invokevirtual 86;		// getProximoNo()Lsmartsystem/No;
+					astore 4;
+				L9:	sconst_1;
+					sstore 5;
+				L10:	goto L14;
+				L11:	sload 5;
+					sload_2;
+					if_scmpne L13;
+				L12:	aload_3;
+					aload_1;
+					invokevirtual 82;		// setProximoNo(Lsmartsystem/No;)V
+					aload_1;
+					aload 4;
+					invokevirtual 82;		// setProximoNo(Lsmartsystem/No;)V
+					aload_0;
+					dup;
+					getfield_b 5;		// byte smartsystem/ListaLigada.tamanho
+					sconst_1;
+					sadd;
+					s2b;
+					putfield_b 5;		// byte smartsystem/ListaLigada.tamanho
+					sconst_1;
+					sreturn;
+				L13:	aload 4;
+					astore_3;
+					aload 4;
+					invokevirtual 86;		// getProximoNo()Lsmartsystem/No;
+					astore 4;
+					sload 5;
+					sconst_1;
+					sadd;
+					s2b;
+					sstore 5;
+				L14:	aload 4;
+					ifnull L16;
+				L15:	sload 5;
+					sload_2;
+					if_scmple L11;
+				L16:	aload 4;
+					ifnonnull L19;
+				L17:	sload 5;
+					sload_2;
+					if_scmpne L19;
+				L18:	aload_3;
+					aload_1;
+					invokevirtual 82;		// setProximoNo(Lsmartsystem/No;)V
+					aload_1;
+					aconst_null;
+					invokevirtual 82;		// setProximoNo(Lsmartsystem/No;)V
+					aload_0;
+					dup;
+					getfield_b 5;		// byte smartsystem/ListaLigada.tamanho
+					sconst_1;
+					sadd;
+					s2b;
+					putfield_b 5;		// byte smartsystem/ListaLigada.tamanho
+					sconst_1;
+					sreturn;
+				L19:	sconst_0;
+					sreturn;
+		}
+
+		.method public remover(Lsmartsystem/No;)Z 3 {
+			.stack 3;
+			.locals 3;
+
+				L0:	aload_1;
+					ifnonnull L2;
+				L1:	sconst_0;
+					sreturn;
+				L2:	aload_1;
+					getfield_a_this 6;		// reference smartsystem/ListaLigada.noPrimeiro
+					if_acmpne L4;
+				L3:	aload_0;
+					getfield_a_this 6;		// reference smartsystem/ListaLigada.noPrimeiro
+					invokevirtual 86;		// getProximoNo()Lsmartsystem/No;
+					putfield_a 6;		// reference smartsystem/ListaLigada.noPrimeiro
+					aload_0;
+					dup;
+					getfield_b 5;		// byte smartsystem/ListaLigada.tamanho
+					sconst_1;
+					ssub;
+					s2b;
+					putfield_b 5;		// byte smartsystem/ListaLigada.tamanho
+					sconst_1;
+					sreturn;
+				L4:	getfield_a_this 6;		// reference smartsystem/ListaLigada.noPrimeiro
+					astore_2;
+				L5:	sconst_0;
+					sstore 4;
+				L6:	goto L11;
+				L7:	aload_2;
+					invokevirtual 86;		// getProximoNo()Lsmartsystem/No;
+					aload_1;
+					if_acmpne L10;
+				L8:	aload_1;
+					invokevirtual 86;		// getProximoNo()Lsmartsystem/No;
+					astore_3;
+				L9:	aload_2;
+					aload_3;
+					invokevirtual 82;		// setProximoNo(Lsmartsystem/No;)V
+					aload_1;
+					aconst_null;
+					invokevirtual 82;		// setProximoNo(Lsmartsystem/No;)V
+					aload_0;
+					dup;
+					getfield_b 5;		// byte smartsystem/ListaLigada.tamanho
+					sconst_1;
+					ssub;
+					s2b;
+					putfield_b 5;		// byte smartsystem/ListaLigada.tamanho
+					sconst_1;
+					sreturn;
+				L10:	aload_2;
+					invokevirtual 86;		// getProximoNo()Lsmartsystem/No;
+					astore_2;
+					sload 4;
+					sconst_1;
+					sadd;
+					s2b;
+					sstore 4;
+				L11:	sload 4;
+					getfield_b_this 5;		// byte smartsystem/ListaLigada.tamanho
+					if_scmplt L7;
+				L12:	sconst_0;
+					sreturn;
+		}
+
+		.method public get(B)Lsmartsystem/No; 4 {
+			.stack 2;
+			.locals 2;
+
+				L0:	sload_1;
+					getfield_b_this 5;		// byte smartsystem/ListaLigada.tamanho
+					if_scmplt L2;
+				L1:	aconst_null;
+					areturn;
+				L2:	getfield_a_this 6;		// reference smartsystem/ListaLigada.noPrimeiro
+					astore_2;
+				L3:	sconst_0;
+					sstore_3;
+				L4:	sconst_0;
+					sstore_3;
+					goto L8;
+				L5:	sload_3;
+					sload_1;
+					if_scmpne L7;
+				L6:	goto L10;
+				L7:	aload_2;
+					invokevirtual 86;		// getProximoNo()Lsmartsystem/No;
+					astore_2;
+					sload_3;
+					sconst_1;
+					sadd;
+					s2b;
+					sstore_3;
+				L8:	aload_2;
+					ifnull L10;
+				L9:	sload_3;
+					sload_1;
+					if_scmple L5;
+				L10:	aload_2;
+					areturn;
+		}
+
+		.method public getPrimeiro()Lsmartsystem/No; 5 {
+			.stack 1;
+			.locals 0;
+
+				L0:	getfield_a_this 6;		// reference smartsystem/ListaLigada.noPrimeiro
+					areturn;
+		}
+
+		.method public getProximo(Lsmartsystem/No;)Lsmartsystem/No; 6 {
+			.stack 1;
+			.locals 0;
+
+				L0:	aload_1;
+					invokevirtual 86;		// getProximoNo()Lsmartsystem/No;
+					areturn;
+		}
+
+		.method public getTamanho()B 7 {
+			.stack 1;
+			.locals 0;
+
+				L0:	getfield_b_this 5;		// byte smartsystem/ListaLigada.tamanho
+					sreturn;
+		}
+
+	}
+
+	.class public Login 8 extends No {
+
+		.fields {
+			protected byte[] id 0;		// [B
+			protected byte[] senha 1;		// [B
+			protected IModulo modulo 2;		// Lsmartsystem/IModulo;
+		}
+
+		.publicMethodTable 1 {
+			equals(Ljava/lang/Object;)Z;
+		}
+
+		.packageMethodTable 2 {
+			getProximoNo()Lsmartsystem/No;;
+			setProximoNo(Lsmartsystem/No;)V;
+			getId()[B;
+			setId([B)V;
+			getSenha()[B;
+			setSenha([B)V;
+			getModulo()Lsmartsystem/IModulo;;
+		}
+
+		.method public <init>([B[B)V 0 {
+			.stack 2;
+			.locals 0;
+
+				L0:	aload_0;
+					invokespecial 49;		// smartsystem/No.<init>()V
+					aload_0;
+					aload_1;
+					putfield_a 7;		// reference smartsystem/Login.id
+					aload_0;
+					aload_2;
+					putfield_a 8;		// reference smartsystem/Login.senha
+					return;
+		}
+
+		.method  getId()[B 130 {
+			.stack 1;
+			.locals 0;
+
+				L0:	getfield_a_this 7;		// reference smartsystem/Login.id
+					areturn;
+		}
+
+		.method  setId([B)V 131 {
+			.stack 2;
+			.locals 0;
+
+				L0:	aload_0;
+					aload_1;
+					putfield_a 7;		// reference smartsystem/Login.id
+					return;
+		}
+
+		.method  getSenha()[B 132 {
+			.stack 1;
+			.locals 0;
+
+				L0:	getfield_a_this 8;		// reference smartsystem/Login.senha
+					areturn;
+		}
+
+		.method  setSenha([B)V 133 {
+			.stack 2;
+			.locals 0;
+
+				L0:	aload_0;
+					aload_1;
+					putfield_a 8;		// reference smartsystem/Login.senha
+					return;
+		}
+
+		.method  getModulo()Lsmartsystem/IModulo; 134 {
+			.stack 1;
+			.locals 0;
+
+				L0:	getfield_a_this 9;		// reference smartsystem/Login.modulo
+					areturn;
+		}
+
+	}
+
+	.class public ModuloImpl 9 extends 2.5 {		// extends javacard/framework/service/CardRemoteObject
+
+		.remote;
+
+		.fields {
+			private IUsuario usuario 0;		// Lsmartsystem/IUsuario;
+			private IGerente gerente 1;		// Lsmartsystem/IGerente;
+			private byte tipo 2;		// B
+		}
+
+		.publicMethodTable 1 {
+			equals(Ljava/lang/Object;)Z;
+			getModulo()Ljava/rmi/Remote;;
+			getUsuario()Lsmartsystem/IUsuario;;
+			getTipo()B;
+		}
+
+		.packageMethodTable 0 {
+		}
+
+		.implementedInterfaceInfoTable { 
+			.interface 1.0 { 		// java/rmi/Remote
+			}
+
+			.interface IModulo { 
+				1;		// getModulo()Ljava/rmi/Remote;
+				3;		// getTipo()B
+			}
+
+		}
+
+		.implementedRemoteInterfaceInfoTable { 
+			.interface IModulo { 
+				getModulo()Ljava/rmi/Remote; 1;		// getModulo()Ljava/rmi/Remote;
+				getTipo()B 3;		// getTipo()B
+			}
+
+		}
+
+		.method public <init>(Lsmartsystem/Login;B)V 0 {
+			.stack 2;
+			.locals 0;
+
+				L0:	aload_0;
+					invokespecial 51;		// javacard/framework/service/CardRemoteObject.<init>()V
+					aload_0;
+					sload_2;
+					putfield_b 10;		// byte smartsystem/ModuloImpl.tipo
+					sload_2;
+					stableswitch L3 96 97 L1 L2;
+				L1:	aload_0;
+					aload_1;
+					checkcast 0 62;		// T_CLASSORINTERFACE smartsystem/IGerente
+					putfield_a 11;		// reference smartsystem/ModuloImpl.gerente
+					goto L3;
+				L2:	aload_0;
+					aload_1;
+					checkcast 0 74;		// T_CLASSORINTERFACE smartsystem/IUsuario
+					putfield_a 12;		// reference smartsystem/ModuloImpl.usuario
+				L3:	return;
+		}
+
+		.method public .remote  getModulo()Ljava/rmi/Remote; 1 {
+			.stack 1;
+			.locals 1;
+
+			.descriptor	Ljava/rmi/Remote;	1.0;
+
+				L0:	aconst_null;
+					astore_1;
+				L1:	getfield_b_this 10;		// byte smartsystem/ModuloImpl.tipo
+					stableswitch L4 96 97 L2 L3;
+				L2:	getfield_a_this 11;		// reference smartsystem/ModuloImpl.gerente
+					astore_1;
+					goto L4;
+				L3:	getfield_a_this 12;		// reference smartsystem/ModuloImpl.usuario
+					astore_1;
+				L4:	aload_1;
+					areturn;
+		}
+
+		.method public getUsuario()Lsmartsystem/IUsuario; 2 {
+			.stack 1;
+			.locals 0;
+
+				L0:	getfield_a_this 12;		// reference smartsystem/ModuloImpl.usuario
+					areturn;
+		}
+
+		.method public .remote  getTipo()B 3 {
+			.stack 1;
+			.locals 0;
+
+				L0:	getfield_b_this 10;		// byte smartsystem/ModuloImpl.tipo
+					sreturn;
+		}
+
+	}
+
+	.class public GerenteImpl 10 extends Login {
+
+		.remote;
+
+		.fields {
+			private PrincipalImpl principal 0;		// Lsmartsystem/PrincipalImpl;
+			private ListaLigada listaAplicacoes 1;		// Lsmartsystem/ListaLigada;
+		}
+
+		.publicMethodTable 1 {
+			equals(Ljava/lang/Object;)Z;
+			alterarSenha([B[B)Z;
+			definirUsuario([B)Z;
+			inserirAplicacao([B)B;
+			removerAplicacao(B)Z;
+			getIds()[B;
+			getNomeAplicacao(B)[B;
+			ativarAplicacao(BZ)Z;
+			isUsuarioAtivo()Z;
+		}
+
+		.packageMethodTable 7 {
+			getProximoNo()Lsmartsystem/No;;
+			setProximoNo(Lsmartsystem/No;)V;
+			getId()[B;
+			setId([B)V;
+			getSenha()[B;
+			setSenha([B)V;
+			getModulo()Lsmartsystem/IModulo;;
+			getAplicacao(B)Lsmartsystem/Aplicacao;;
+		}
+
+		.implementedInterfaceInfoTable { 
+			.interface 1.0 { 		// java/rmi/Remote
+			}
+
+			.interface IGerente { 
+				1;		// alterarSenha([B[B)Z
+				2;		// definirUsuario([B)Z
+				3;		// inserirAplicacao([B)B
+				4;		// removerAplicacao(B)Z
+				5;		// getIds()[B
+				6;		// getNomeAplicacao(B)[B
+				7;		// ativarAplicacao(BZ)Z
+				8;		// isUsuarioAtivo()Z
+			}
+
+		}
+
+		.implementedRemoteInterfaceInfoTable { 
+			.interface IGerente { 
+				alterarSenha([B[B)Z 1;		// alterarSenha([B[B)Z
+				definirUsuario([B)Z 2;		// definirUsuario([B)Z
+				inserirAplicacao([B)B 3;		// inserirAplicacao([B)B
+				removerAplicacao(B)Z 4;		// removerAplicacao(B)Z
+				getIds()[B 5;		// getIds()[B
+				getNomeAplicacao(B)[B 6;		// getNomeAplicacao(B)[B
+				ativarAplicacao(BZ)Z 7;		// ativarAplicacao(BZ)Z
+				isUsuarioAtivo()Z 8;		// isUsuarioAtivo()Z
+			}
+
+		}
+
+		.method public <init>([B[BLsmartsystem/PrincipalImpl;)V 0 {
+			.stack 5;
+			.locals 0;
+
+				L0:	aload_0;
+					aload_1;
+					aload_2;
+					invokespecial 84;		// smartsystem/Login.<init>([B[B)V
+					aload_0;
+					invokestatic 85;		// javacard/framework/service/CardRemoteObject.export(Ljava/rmi/Remote;)V
+					aload_0;
+					aload_3;
+					putfield_a 13;		// reference smartsystem/GerenteImpl.principal
+					aload_0;
+					new 87;		// smartsystem/ModuloImpl
+					dup;
+					aload_0;
+					bspush 96;
+					invokespecial 88;		// smartsystem/ModuloImpl.<init>(Lsmartsystem/Login;B)V
+					putfield_a 9;		// reference smartsystem/Login.modulo
+					aload_0;
+					new 72;		// smartsystem/ListaLigada
+					dup;
+					invokespecial 89;		// smartsystem/ListaLigada.<init>()V
+					putfield_a 14;		// reference smartsystem/GerenteImpl.listaAplicacoes
+					return;
+		}
+
+		.method public .remote  alterarSenha([B[B)Z 1 {
+			.stack 3;
+			.locals 2;
+
+				L0:	aload_2;
+					arraylength;
+					bspush 6;
+					if_scmpge L2;
+				L1:	sconst_0;
+					sreturn;
+				L2:	sconst_1;
+					sstore_3;
+				L3:	sconst_0;
+					sstore 4;
+				L4:	goto L8;
+				L5:	aload_1;
+					sload 4;
+					baload;
+					getfield_a_this 8;		// reference smartsystem/Login.senha
+					sload 4;
+					baload;
+					if_scmpeq L7;
+				L6:	sconst_0;
+					sstore_3;
+				L7:	sload 4;
+					sconst_1;
+					sadd;
+					s2b;
+					sstore 4;
+				L8:	sload 4;
+					aload_1;
+					arraylength;
+					if_scmpge L10;
+				L9:	sload_3;
+					ifne L5;
+				L10:	sload_3;
+					ifeq L12;
+				L11:	aload_0;
+					aload_2;
+					putfield_a 8;		// reference smartsystem/Login.senha
+					sconst_1;
+					sreturn;
+				L12:	sconst_0;
+					sreturn;
+		}
+
+		.method public .remote  definirUsuario([B)Z 2 {
+			.stack 2;
+			.locals 2;
+
+				L0:	getfield_a_this 13;		// reference smartsystem/GerenteImpl.principal
+					invokevirtual 90;		// getListaLogin()Lsmartsystem/ListaLigada;
+					invokevirtual 91;		// getPrimeiro()Lsmartsystem/No;
+					checkcast 0 92;		// T_CLASSORINTERFACE smartsystem/Login
+					astore_2;
+				L1:	goto L6;
+				L2:	aload_2;
+					invokevirtual 93;		// getModulo()Lsmartsystem/IModulo;
+					invokeinterface 1 94 1;		// smartsystem/IModulo
+					bspush 97;
+					if_scmpne L5;
+				L3:	aload_2;
+					aload_1;
+					invokevirtual 95;		// setId([B)V
+					aload_2;
+					checkcast 0 74;		// T_CLASSORINTERFACE smartsystem/IUsuario
+					astore_3;
+				L4:	aload_3;
+					sconst_1;
+					invokeinterface 2 74 8;		// smartsystem/IUsuario
+					aload_3;
+					invokeinterface 1 74 9;		// smartsystem/IUsuario
+					checkcast 0 96;		// T_CLASSORINTERFACE smartsystem/VCardImpl
+					invokevirtual 97;		// limpar()V
+					sconst_1;
+					sreturn;
+				L5:	getfield_a_this 13;		// reference smartsystem/GerenteImpl.principal
+					invokevirtual 90;		// getListaLogin()Lsmartsystem/ListaLigada;
+					aload_2;
+					invokevirtual 98;		// getProximo(Lsmartsystem/No;)Lsmartsystem/No;
+					checkcast 0 92;		// T_CLASSORINTERFACE smartsystem/Login
+					astore_2;
+				L6:	aload_2;
+					ifnonnull L2;
+				L7:	sconst_0;
+					sreturn;
+		}
+
+		.method public .remote  inserirAplicacao([B)B 3 {
+			.stack 5;
+			.locals 2;
+
+				L0:	aload_0;
+					invokespecial 99;		// smartsystem/GerenteImpl.nextId()B
+					sstore_3;
+				L1:	new 100;		// smartsystem/Aplicacao
+					dup;
+					sload_3;
+					aload_1;
+					sconst_0;
+					invokespecial 101;		// smartsystem/Aplicacao.<init>(B[BZ)V
+					astore_2;
+				L2:	getfield_a_this 14;		// reference smartsystem/GerenteImpl.listaAplicacoes
+					aload_2;
+					invokevirtual 102;		// inserirNoFinal(Lsmartsystem/No;)Z
+					pop;
+					sload_3;
+					sreturn;
+		}
+
+		.method public .remote  removerAplicacao(B)Z 4 {
+			.stack 2;
+			.locals 1;
+
+				L0:	getfield_a_this 14;		// reference smartsystem/GerenteImpl.listaAplicacoes
+					invokevirtual 91;		// getPrimeiro()Lsmartsystem/No;
+					checkcast 0 100;		// T_CLASSORINTERFACE smartsystem/Aplicacao
+					astore_2;
+				L1:	goto L5;
+				L2:	aload_2;
+					invokevirtual 103;		// getId()B
+					sload_1;
+					if_scmpne L4;
+				L3:	getfield_a_this 14;		// reference smartsystem/GerenteImpl.listaAplicacoes
+					aload_2;
+					invokevirtual 104;		// remover(Lsmartsystem/No;)Z
+					sreturn;
+				L4:	getfield_a_this 14;		// reference smartsystem/GerenteImpl.listaAplicacoes
+					aload_2;
+					invokevirtual 98;		// getProximo(Lsmartsystem/No;)Lsmartsystem/No;
+					checkcast 0 100;		// T_CLASSORINTERFACE smartsystem/Aplicacao
+					astore_2;
+				L5:	aload_2;
+					ifnonnull L2;
+				L6:	sconst_0;
+					sreturn;
+		}
+
+		.method public .remote  getIds()[B 5 {
+			.stack 3;
+			.locals 3;
+
+				L0:	getfield_a_this 14;		// reference smartsystem/GerenteImpl.listaAplicacoes
+					invokevirtual 105;		// getTamanho()B
+					newarray 11;
+					astore_2;
+				L1:	getfield_a_this 14;		// reference smartsystem/GerenteImpl.listaAplicacoes
+					invokevirtual 91;		// getPrimeiro()Lsmartsystem/No;
+					checkcast 0 100;		// T_CLASSORINTERFACE smartsystem/Aplicacao
+					astore_1;
+				L2:	sconst_0;
+					sstore_3;
+				L3:	goto L5;
+				L4:	aload_2;
+					sload_3;
+					aload_1;
+					invokevirtual 103;		// getId()B
+					bastore;
+					getfield_a_this 14;		// reference smartsystem/GerenteImpl.listaAplicacoes
+					aload_1;
+					invokevirtual 98;		// getProximo(Lsmartsystem/No;)Lsmartsystem/No;
+					checkcast 0 100;		// T_CLASSORINTERFACE smartsystem/Aplicacao
+					astore_1;
+					sload_3;
+					sconst_1;
+					sadd;
+					s2b;
+					sstore_3;
+				L5:	sload_3;
+					aload_2;
+					arraylength;
+					if_scmplt L4;
+				L6:	aload_2;
+					areturn;
+		}
+
+		.method public .remote  getNomeAplicacao(B)[B 6 {
+			.stack 2;
+			.locals 1;
+
+				L0:	getfield_a_this 14;		// reference smartsystem/GerenteImpl.listaAplicacoes
+					invokevirtual 91;		// getPrimeiro()Lsmartsystem/No;
+					checkcast 0 100;		// T_CLASSORINTERFACE smartsystem/Aplicacao
+					astore_2;
+				L1:	goto L5;
+				L2:	aload_2;
+					invokevirtual 103;		// getId()B
+					sload_1;
+					if_scmpne L4;
+				L3:	aload_2;
+					invokevirtual 45;		// getNome()[B
+					areturn;
+				L4:	getfield_a_this 14;		// reference smartsystem/GerenteImpl.listaAplicacoes
+					aload_2;
+					invokevirtual 98;		// getProximo(Lsmartsystem/No;)Lsmartsystem/No;
+					checkcast 0 100;		// T_CLASSORINTERFACE smartsystem/Aplicacao
+					astore_2;
+				L5:	aload_2;
+					ifnonnull L2;
+				L6:	aconst_null;
+					areturn;
+		}
+
+		.method public .remote  ativarAplicacao(BZ)Z 7 {
+			.stack 2;
+			.locals 1;
+
+				L0:	getfield_a_this 14;		// reference smartsystem/GerenteImpl.listaAplicacoes
+					invokevirtual 91;		// getPrimeiro()Lsmartsystem/No;
+					checkcast 0 100;		// T_CLASSORINTERFACE smartsystem/Aplicacao
+					astore_3;
+				L1:	goto L5;
+				L2:	aload_3;
+					invokevirtual 103;		// getId()B
+					sload_1;
+					if_scmpne L4;
+				L3:	aload_3;
+					sload_2;
+					invokevirtual 46;		// setAtiva(Z)V
+					sconst_1;
+					sreturn;
+				L4:	getfield_a_this 14;		// reference smartsystem/GerenteImpl.listaAplicacoes
+					aload_3;
+					invokevirtual 98;		// getProximo(Lsmartsystem/No;)Lsmartsystem/No;
+					checkcast 0 100;		// T_CLASSORINTERFACE smartsystem/Aplicacao
+					astore_3;
+				L5:	aload_3;
+					ifnonnull L2;
+				L6:	sconst_0;
+					sreturn;
+		}
+
+		.method  getAplicacao(B)Lsmartsystem/Aplicacao; 135 {
+			.stack 2;
+			.locals 1;
+
+				L0:	getfield_a_this 14;		// reference smartsystem/GerenteImpl.listaAplicacoes
+					invokevirtual 91;		// getPrimeiro()Lsmartsystem/No;
+					checkcast 0 100;		// T_CLASSORINTERFACE smartsystem/Aplicacao
+					astore_2;
+				L1:	goto L5;
+				L2:	aload_2;
+					invokevirtual 103;		// getId()B
+					sload_1;
+					if_scmpne L4;
+				L3:	aload_2;
+					areturn;
+				L4:	getfield_a_this 14;		// reference smartsystem/GerenteImpl.listaAplicacoes
+					aload_2;
+					invokevirtual 98;		// getProximo(Lsmartsystem/No;)Lsmartsystem/No;
+					checkcast 0 100;		// T_CLASSORINTERFACE smartsystem/Aplicacao
+					astore_2;
+				L5:	aload_2;
+					ifnonnull L2;
+				L6:	aconst_null;
+					areturn;
+		}
+
+		.method private nextId()B {
+			.stack 2;
+			.locals 4;
+
+				L0:	sconst_0;
+					sstore 4;
+				L1:	sconst_0;
+					sstore_3;
+				L2:	sconst_1;
+					sstore 4;
+					getfield_a_this 14;		// reference smartsystem/GerenteImpl.listaAplicacoes
+					invokevirtual 91;		// getPrimeiro()Lsmartsystem/No;
+					checkcast 0 100;		// T_CLASSORINTERFACE smartsystem/Aplicacao
+					astore_1;
+				L3:	sconst_0;
+					sstore_2;
+				L4:	goto L8;
+				L5:	aload_1;
+					invokevirtual 103;		// getId()B
+					sload_3;
+					if_scmpne L7;
+				L6:	sconst_0;
+					sstore 4;
+					sload_3;
+					sconst_1;
+					sadd;
+					s2b;
+					sstore_3;
+					goto L9;
+				L7:	getfield_a_this 14;		// reference smartsystem/GerenteImpl.listaAplicacoes
+					aload_1;
+					invokevirtual 98;		// getProximo(Lsmartsystem/No;)Lsmartsystem/No;
+					checkcast 0 100;		// T_CLASSORINTERFACE smartsystem/Aplicacao
+					astore_1;
+					sload_2;
+					sconst_1;
+					sadd;
+					s2b;
+					sstore_2;
+				L8:	sload_2;
+					getfield_a_this 14;		// reference smartsystem/GerenteImpl.listaAplicacoes
+					invokevirtual 105;		// getTamanho()B
+					if_scmplt L5;
+				L9:	sload 4;
+					ifeq L2;
+				L10:	sload_3;
+					sreturn;
+		}
+
+		.method public .remote  isUsuarioAtivo()Z 8 {
+			.stack 2;
+			.locals 1;
+
+				L0:	getfield_a_this 13;		// reference smartsystem/GerenteImpl.principal
+					invokevirtual 90;		// getListaLogin()Lsmartsystem/ListaLigada;
+					invokevirtual 91;		// getPrimeiro()Lsmartsystem/No;
+					checkcast 0 92;		// T_CLASSORINTERFACE smartsystem/Login
+					astore_1;
+				L1:	goto L5;
+				L2:	aload_1;
+					invokevirtual 93;		// getModulo()Lsmartsystem/IModulo;
+					invokeinterface 1 94 1;		// smartsystem/IModulo
+					bspush 97;
+					if_scmpne L4;
+				L3:	aload_1;
+					checkcast 0 74;		// T_CLASSORINTERFACE smartsystem/IUsuario
+					invokeinterface 1 74 7;		// smartsystem/IUsuario
+					sreturn;
+				L4:	getfield_a_this 13;		// reference smartsystem/GerenteImpl.principal
+					invokevirtual 90;		// getListaLogin()Lsmartsystem/ListaLigada;
+					aload_1;
+					invokevirtual 98;		// getProximo(Lsmartsystem/No;)Lsmartsystem/No;
+					checkcast 0 92;		// T_CLASSORINTERFACE smartsystem/Login
+					astore_1;
+				L5:	aload_1;
+					ifnonnull L2;
+				L6:	new 47;		// javacard/framework/UserException
+					dup;
+					invokespecial 48;		// javacard/framework/UserException.<init>()V
+					athrow;
+		}
+
+	}
+
+	.class public Preferencia 11 extends No {
+
+		.fields {
+			private byte[] nome 0;		// [B
+			private byte[] valor 1;		// [B
+			private byte id 2;		// B
+		}
+
+		.publicMethodTable 1 {
+			equals(Ljava/lang/Object;)Z;
+			getId()B;
+			getNome()[B;
+			getValor()[B;
+			setValor([B)V;
+		}
+
+		.packageMethodTable 2 {
+			getProximoNo()Lsmartsystem/No;;
+			setProximoNo(Lsmartsystem/No;)V;
+		}
+
+		.method public <init>(B[B[B)V 0 {
+			.stack 2;
+			.locals 0;
+
+				L0:	aload_0;
+					invokespecial 49;		// smartsystem/No.<init>()V
+					aload_0;
+					sload_1;
+					putfield_b 15;		// byte smartsystem/Preferencia.id
+					aload_0;
+					aload_2;
+					putfield_a 16;		// reference smartsystem/Preferencia.nome
+					aload_0;
+					aload_3;
+					putfield_a 17;		// reference smartsystem/Preferencia.valor
+					return;
+		}
+
+		.method public getId()B 1 {
+			.stack 1;
+			.locals 0;
+
+				L0:	getfield_b_this 15;		// byte smartsystem/Preferencia.id
+					sreturn;
+		}
+
+		.method public getNome()[B 2 {
+			.stack 1;
+			.locals 0;
+
+				L0:	getfield_a_this 16;		// reference smartsystem/Preferencia.nome
+					areturn;
+		}
+
+		.method public getValor()[B 3 {
+			.stack 1;
+			.locals 0;
+
+				L0:	getfield_a_this 17;		// reference smartsystem/Preferencia.valor
+					areturn;
+		}
+
+		.method public setValor([B)V 4 {
+			.stack 2;
+			.locals 0;
+
+				L0:	aload_0;
+					aload_1;
+					putfield_a 17;		// reference smartsystem/Preferencia.valor
+					return;
+		}
+
+	}
+
+	.class public PrincipalImpl 12 extends 2.5 {		// extends javacard/framework/service/CardRemoteObject
+
+		.remote;
+
+		.fields {
+			private ListaLigada listaLogin 0;		// Lsmartsystem/ListaLigada;
+		}
+
+		.publicMethodTable 1 {
+			equals(Ljava/lang/Object;)Z;
+			fazerLogin([B[B)Lsmartsystem/IModulo;;
+		}
+
+		.packageMethodTable 0 {
+			getListaLogin()Lsmartsystem/ListaLigada;;
+		}
+
+		.implementedInterfaceInfoTable { 
+			.interface 1.0 { 		// java/rmi/Remote
+			}
+
+			.interface IPrincipal { 
+				1;		// fazerLogin([B[B)Lsmartsystem/IModulo;
+			}
+
+		}
+
+		.implementedRemoteInterfaceInfoTable { 
+			.interface IPrincipal { 
+				fazerLogin([B[B)Lsmartsystem/IModulo; 1;		// fazerLogin([B[B)Lsmartsystem/IModulo;
+			}
+
+		}
+
+		.method public <init>()V 0 {
+			.stack 5;
+			.locals 4;
+
+				L0:	aload_0;
+					invokespecial 51;		// javacard/framework/service/CardRemoteObject.<init>()V
+					aload_0;
+					new 72;		// smartsystem/ListaLigada
+					dup;
+					invokespecial 89;		// smartsystem/ListaLigada.<init>()V
+					putfield_a 18;		// reference smartsystem/PrincipalImpl.listaLogin
+					bspush 7;
+					newarray 11;
+					dup;
+					sconst_0;
+					bspush 103;
+					bastore;
+					dup;
+					sconst_1;
+					bspush 101;
+					bastore;
+					dup;
+					sconst_2;
+					bspush 114;
+					bastore;
+					dup;
+					sconst_3;
+					bspush 101;
+					bastore;
+					dup;
+					sconst_4;
+					bspush 110;
+					bastore;
+					dup;
+					sconst_5;
+					bspush 116;
+					bastore;
+					dup;
+					bspush 6;
+					bspush 101;
+					bastore;
+					astore_3;
+				L1:	bspush 7;
+					newarray 11;
+					dup;
+					sconst_0;
+					bspush 117;
+					bastore;
+					dup;
+					sconst_1;
+					bspush 115;
+					bastore;
+					dup;
+					sconst_2;
+					bspush 117;
+					bastore;
+					dup;
+					sconst_3;
+					bspush 97;
+					bastore;
+					dup;
+					sconst_4;
+					bspush 114;
+					bastore;
+					dup;
+					sconst_5;
+					bspush 105;
+					bastore;
+					dup;
+					bspush 6;
+					bspush 111;
+					bastore;
+					astore 4;
+				L2:	new 53;		// smartsystem/GerenteImpl
+					dup;
+					aload_3;
+					aload_3;
+					aload_0;
+					invokespecial 54;		// smartsystem/GerenteImpl.<init>([B[BLsmartsystem/PrincipalImpl;)V
+					astore_1;
+				L3:	new 55;		// smartsystem/UsuarioImpl
+					dup;
+					aload 4;
+					aload 4;
+					aload_1;
+					invokespecial 56;		// smartsystem/UsuarioImpl.<init>([B[BLsmartsystem/GerenteImpl;)V
+					astore_2;
+				L4:	getfield_a_this 18;		// reference smartsystem/PrincipalImpl.listaLogin
+					aload_1;
+					invokevirtual 102;		// inserirNoFinal(Lsmartsystem/No;)Z
+					pop;
+					getfield_a_this 18;		// reference smartsystem/PrincipalImpl.listaLogin
+					aload_2;
+					invokevirtual 102;		// inserirNoFinal(Lsmartsystem/No;)Z
+					pop;
+					return;
+		}
+
+		.method public .remote  fazerLogin([B[B)Lsmartsystem/IModulo; 1 {
+			.stack 3;
+			.locals 5;
+
+				L0:	aconst_null;
+					astore_3;
+				L1:	getfield_a_this 18;		// reference smartsystem/PrincipalImpl.listaLogin
+					invokevirtual 91;		// getPrimeiro()Lsmartsystem/No;
+					checkcast 0 92;		// T_CLASSORINTERFACE smartsystem/Login
+					astore 4;
+				L2:	goto_w L26;
+				L3:	sconst_1;
+					sstore 6;
+				L4:	aload 4;
+					invokevirtual 93;		// getModulo()Lsmartsystem/IModulo;
+					invokeinterface 1 94 1;		// smartsystem/IModulo
+					bspush 97;
+					if_scmpne L7;
+				L5:	aload 4;
+					checkcast 0 74;		// T_CLASSORINTERFACE smartsystem/IUsuario
+					invokeinterface 1 74 7;		// smartsystem/IUsuario
+					ifne L7;
+				L6:	getfield_a_this 18;		// reference smartsystem/PrincipalImpl.listaLogin
+					aload 4;
+					invokevirtual 98;		// getProximo(Lsmartsystem/No;)Lsmartsystem/No;
+					checkcast 0 92;		// T_CLASSORINTERFACE smartsystem/Login
+					astore 4;
+					goto_w L26;
+				L7:	aload 4;
+					invokevirtual 57;		// getId()[B
+					astore 5;
+				L8:	sconst_0;
+					sstore 7;
+				L9:	goto L13;
+				L10:	aload 5;
+					sload 7;
+					baload;
+					aload_1;
+					sload 7;
+					baload;
+					if_scmpeq L12;
+				L11:	sconst_0;
+					sstore 6;
+				L12:	sload 7;
+					sconst_1;
+					sadd;
+					s2b;
+					sstore 7;
+				L13:	sload 7;
+					aload 5;
+					arraylength;
+					if_scmpge L15;
+				L14:	sload 6;
+					ifne L10;
+				L15:	sload 6;
+					ifne L17;
+				L16:	getfield_a_this 18;		// reference smartsystem/PrincipalImpl.listaLogin
+					aload 4;
+					invokevirtual 98;		// getProximo(Lsmartsystem/No;)Lsmartsystem/No;
+					checkcast 0 92;		// T_CLASSORINTERFACE smartsystem/Login
+					astore 4;
+					goto L26;
+				L17:	aload 4;
+					invokevirtual 58;		// getSenha()[B
+					astore 5;
+					sconst_0;
+					sstore 7;
+					goto L21;
+				L18:	aload 5;
+					sload 7;
+					baload;
+					aload_2;
+					sload 7;
+					baload;
+					if_scmpeq L20;
+				L19:	sconst_0;
+					sstore 6;
+				L20:	sload 7;
+					sconst_1;
+					sadd;
+					s2b;
+					sstore 7;
+				L21:	sload 7;
+					aload 5;
+					arraylength;
+					if_scmpge L23;
+				L22:	sload 6;
+					ifne L18;
+				L23:	sload 6;
+					ifeq L25;
+				L24:	aload 4;
+					invokevirtual 93;		// getModulo()Lsmartsystem/IModulo;
+					astore_3;
+					aconst_null;
+					astore 4;
+					goto L26;
+				L25:	getfield_a_this 18;		// reference smartsystem/PrincipalImpl.listaLogin
+					aload 4;
+					invokevirtual 98;		// getProximo(Lsmartsystem/No;)Lsmartsystem/No;
+					checkcast 0 92;		// T_CLASSORINTERFACE smartsystem/Login
+					astore 4;
+				L26:	aload 4;
+					ifnonnull_w L3;
+				L27:	aload_3;
+					areturn;
+		}
+
+		.method  getListaLogin()Lsmartsystem/ListaLigada; 128 {
+			.stack 1;
+			.locals 0;
+
+				L0:	getfield_a_this 18;		// reference smartsystem/PrincipalImpl.listaLogin
+					areturn;
+		}
+
+	}
+
+	.class public SmartApplet 13 extends 3.3 {		// extends javacard/framework/Applet
+
+		.fields {
+			private 2.6 dispatcher 0;		// Ljavacard/framework/service/Dispatcher;
+		}
+
+		.publicMethodTable 7 {
+			equals(Ljava/lang/Object;)Z;
+			register()V;
+			register([BSB)V;
+			selectingApplet()Z;
+			deselect()V;
+			getShareableInterfaceObject(Ljavacard/framework/AID;B)Ljavacard/framework/Shareable;;
+			select()Z;
+			process(Ljavacard/framework/APDU;)V;
+		}
+
+		.packageMethodTable 0 {
+		}
+
+		.method private <init>()V {
+			.stack 4;
+			.locals 1;
+
+				L0:	aload_0;
+					invokespecial 59;		// javacard/framework/Applet.<init>()V
+					aload_0;
+					new 60;		// javacard/framework/service/Dispatcher
+					dup;
+					sconst_1;
+					invokespecial 61;		// javacard/framework/service/Dispatcher.<init>(S)V
+					putfield_a 19;		// reference smartsystem/SmartApplet.dispatcher
+					new 63;		// javacard/framework/service/RMIService
+					dup;
+					new 64;		// smartsystem/PrincipalImpl
+					dup;
+					invokespecial 65;		// smartsystem/PrincipalImpl.<init>()V
+					invokespecial 66;		// javacard/framework/service/RMIService.<init>(Ljava/rmi/Remote;)V
+					astore_1;
+				L1:	getfield_a_this 19;		// reference smartsystem/SmartApplet.dispatcher
+					aload_1;
+					sconst_2;
+					invokevirtual 67;		// addService(Ljavacard/framework/service/Service;B)V
+					return;
+		}
+
+		.method public static install([BSB)V 0 {
+			.stack 2;
+			.locals 0;
+
+				L0:	new 68;		// smartsystem/SmartApplet
+					dup;
+					invokespecial 69;		// smartsystem/SmartApplet.<init>()V
+					invokevirtual 70;		// register()V
+					return;
+		}
+
+		.method public process(Ljavacard/framework/APDU;)V 7 {
+			.stack 2;
+			.locals 0;
+
+			.descriptor	Ljavacard/framework/APDU;	3.10;
+
+				L0:	getfield_a_this 19;		// reference smartsystem/SmartApplet.dispatcher
+					aload_1;
+					invokevirtual 71;		// process(Ljavacard/framework/APDU;)V
+					return;
+		}
+
+	}
+
+	.class public UsuarioImpl 14 extends Login {
+
+		.remote;
+
+		.fields {
+			private IVCard vCard 0;		// Lsmartsystem/IVCard;
+			private GerenteImpl gerente 1;		// Lsmartsystem/GerenteImpl;
+			private boolean ativo 2;		// Z
+		}
+
+		.publicMethodTable 1 {
+			equals(Ljava/lang/Object;)Z;
+			alterarNome([B)V;
+			alterarSenha([B[B)Z;
+			inserirPreferencia(B[B[B)B;
+			alterarPreferencia(BB[B)Z;
+			removerPreferencia(BB)Z;
+			isAtivo()Z;
+			setAtivo(Z)V;
+			getVCard()Lsmartsystem/IVCard;;
+			getPreferenciaNome(BB)[B;
+			getPreferenciaIds(B)[B;
+		}
+
+		.packageMethodTable 7 {
+			getProximoNo()Lsmartsystem/No;;
+			setProximoNo(Lsmartsystem/No;)V;
+			getId()[B;
+			setId([B)V;
+			getSenha()[B;
+			setSenha([B)V;
+			getModulo()Lsmartsystem/IModulo;;
+		}
+
+		.implementedInterfaceInfoTable { 
+			.interface 1.0 { 		// java/rmi/Remote
+			}
+
+			.interface IUsuario { 
+				1;		// alterarNome([B)V
+				2;		// alterarSenha([B[B)Z
+				3;		// inserirPreferencia(B[B[B)B
+				4;		// alterarPreferencia(BB[B)Z
+				5;		// removerPreferencia(BB)Z
+				10;		// getPreferenciaIds(B)[B
+				9;		// getPreferenciaNome(BB)[B
+				6;		// isAtivo()Z
+				7;		// setAtivo(Z)V
+				8;		// getVCard()Lsmartsystem/IVCard;
+			}
+
+		}
+
+		.implementedRemoteInterfaceInfoTable { 
+			.interface IUsuario { 
+				alterarNome([B)V 1;		// alterarNome([B)V
+				alterarSenha([B[B)Z 2;		// alterarSenha([B[B)Z
+				inserirPreferencia(B[B[B)B 3;		// inserirPreferencia(B[B[B)B
+				alterarPreferencia(BB[B)Z 4;		// alterarPreferencia(BB[B)Z
+				removerPreferencia(BB)Z 5;		// removerPreferencia(BB)Z
+				getPreferenciaIds(B)[B 10;		// getPreferenciaIds(B)[B
+				getPreferenciaNome(BB)[B 9;		// getPreferenciaNome(BB)[B
+				isAtivo()Z 6;		// isAtivo()Z
+				setAtivo(Z)V 7;		// setAtivo(Z)V
+				getVCard()Lsmartsystem/IVCard; 8;		// getVCard()Lsmartsystem/IVCard;
+			}
+
+		}
+
+		.method public <init>([B[BLsmartsystem/GerenteImpl;)V 0 {
+			.stack 5;
+			.locals 0;
+
+				L0:	aload_0;
+					aload_1;
+					aload_2;
+					invokespecial 84;		// smartsystem/Login.<init>([B[B)V
+					aload_0;
+					invokestatic 85;		// javacard/framework/service/CardRemoteObject.export(Ljava/rmi/Remote;)V
+					aload_0;
+					aload_3;
+					putfield_a 20;		// reference smartsystem/UsuarioImpl.gerente
+					aload_0;
+					new 87;		// smartsystem/ModuloImpl
+					dup;
+					aload_0;
+					bspush 97;
+					invokespecial 88;		// smartsystem/ModuloImpl.<init>(Lsmartsystem/Login;B)V
+					putfield_a 9;		// reference smartsystem/Login.modulo
+					aload_0;
+					new 96;		// smartsystem/VCardImpl
+					dup;
+					invokespecial 73;		// smartsystem/VCardImpl.<init>()V
+					putfield_a 21;		// reference smartsystem/UsuarioImpl.vCard
+					return;
+		}
+
+		.method public .remote  alterarNome([B)V 1 {
+			.stack 2;
+			.locals 0;
+
+				L0:	aload_0;
+					aload_1;
+					putfield_a 7;		// reference smartsystem/Login.id
+					return;
+		}
+
+		.method public .remote  alterarSenha([B[B)Z 2 {
+			.stack 3;
+			.locals 2;
+
+				L0:	aload_2;
+					arraylength;
+					bspush 6;
+					if_scmpge L2;
+				L1:	sconst_0;
+					sreturn;
+				L2:	sconst_1;
+					sstore_3;
+				L3:	sconst_0;
+					sstore 4;
+				L4:	goto L8;
+				L5:	aload_1;
+					sload 4;
+					baload;
+					getfield_a_this 8;		// reference smartsystem/Login.senha
+					sload 4;
+					baload;
+					if_scmpeq L7;
+				L6:	sconst_0;
+					sstore_3;
+				L7:	sload 4;
+					sconst_1;
+					sadd;
+					s2b;
+					sstore 4;
+				L8:	sload 4;
+					aload_1;
+					arraylength;
+					if_scmpge L10;
+				L9:	sload_3;
+					ifne L5;
+				L10:	sload_3;
+					ifeq L12;
+				L11:	aload_0;
+					aload_2;
+					putfield_a 8;		// reference smartsystem/Login.senha
+					sconst_1;
+					sreturn;
+				L12:	sconst_0;
+					sreturn;
+		}
+
+		.method public .remote  inserirPreferencia(B[B[B)B 3 {
+			.stack 5;
+			.locals 3;
+
+				L0:	getfield_a_this 20;		// reference smartsystem/UsuarioImpl.gerente
+					sload_1;
+					invokevirtual 75;		// getAplicacao(B)Lsmartsystem/Aplicacao;
+					astore 4;
+				L1:	aload 4;
+					ifnonnull L3;
+				L2:	sconst_m1;
+					sreturn;
+				L3:	aload_0;
+					aload 4;
+					invokespecial 76;		// smartsystem/UsuarioImpl.nextId(Lsmartsystem/Aplicacao;)B
+					sstore 6;
+				L4:	new 77;		// smartsystem/Preferencia
+					dup;
+					sload 6;
+					aload_2;
+					aload_3;
+					invokespecial 78;		// smartsystem/Preferencia.<init>(B[B[B)V
+					astore 5;
+				L5:	aload 4;
+					invokevirtual 79;		// getListaPreferencias()Lsmartsystem/ListaLigada;
+					aload 5;
+					invokevirtual 102;		// inserirNoFinal(Lsmartsystem/No;)Z
+					pop;
+					sload 6;
+					sreturn;
+		}
+
+		.method public .remote  alterarPreferencia(BB[B)Z 4 {
+			.stack 2;
+			.locals 2;
+
+				L0:	getfield_a_this 20;		// reference smartsystem/UsuarioImpl.gerente
+					sload_1;
+					invokevirtual 75;		// getAplicacao(B)Lsmartsystem/Aplicacao;
+					astore 4;
+				L1:	aload 4;
+					ifnonnull L3;
+				L2:	sconst_0;
+					sreturn;
+				L3:	aload 4;
+					invokevirtual 79;		// getListaPreferencias()Lsmartsystem/ListaLigada;
+					invokevirtual 91;		// getPrimeiro()Lsmartsystem/No;
+					checkcast 0 77;		// T_CLASSORINTERFACE smartsystem/Preferencia
+					astore 5;
+				L4:	goto L8;
+				L5:	aload 5;
+					invokevirtual 80;		// getId()B
+					sload_2;
+					if_scmpne L7;
+				L6:	aload 5;
+					aload_3;
+					invokevirtual 81;		// setValor([B)V
+					sconst_1;
+					sreturn;
+				L7:	aload 4;
+					invokevirtual 79;		// getListaPreferencias()Lsmartsystem/ListaLigada;
+					aload 5;
+					invokevirtual 98;		// getProximo(Lsmartsystem/No;)Lsmartsystem/No;
+					checkcast 0 77;		// T_CLASSORINTERFACE smartsystem/Preferencia
+					astore 5;
+				L8:	aload 5;
+					ifnonnull L5;
+				L9:	sconst_0;
+					sreturn;
+		}
+
+		.method public .remote  removerPreferencia(BB)Z 5 {
+			.stack 2;
+			.locals 2;
+
+				L0:	getfield_a_this 20;		// reference smartsystem/UsuarioImpl.gerente
+					sload_1;
+					invokevirtual 75;		// getAplicacao(B)Lsmartsystem/Aplicacao;
+					astore_3;
+				L1:	aload_3;
+					ifnonnull L3;
+				L2:	sconst_0;
+					sreturn;
+				L3:	aload_3;
+					invokevirtual 79;		// getListaPreferencias()Lsmartsystem/ListaLigada;
+					invokevirtual 91;		// getPrimeiro()Lsmartsystem/No;
+					checkcast 0 77;		// T_CLASSORINTERFACE smartsystem/Preferencia
+					astore 4;
+				L4:	goto L8;
+				L5:	aload 4;
+					invokevirtual 80;		// getId()B
+					sload_2;
+					if_scmpne L7;
+				L6:	aload_3;
+					invokevirtual 79;		// getListaPreferencias()Lsmartsystem/ListaLigada;
+					aload 4;
+					invokevirtual 104;		// remover(Lsmartsystem/No;)Z
+					sreturn;
+				L7:	aload_3;
+					invokevirtual 79;		// getListaPreferencias()Lsmartsystem/ListaLigada;
+					aload 4;
+					invokevirtual 98;		// getProximo(Lsmartsystem/No;)Lsmartsystem/No;
+					checkcast 0 77;		// T_CLASSORINTERFACE smartsystem/Preferencia
+					astore 4;
+				L8:	aload 4;
+					ifnonnull L5;
+				L9:	sconst_0;
+					sreturn;
+		}
+
+		.method public .remote  isAtivo()Z 6 {
+			.stack 1;
+			.locals 0;
+
+				L0:	getfield_b_this 22;		// boolean smartsystem/UsuarioImpl.ativo
+					sreturn;
+		}
+
+		.method public .remote  setAtivo(Z)V 7 {
+			.stack 2;
+			.locals 0;
+
+				L0:	aload_0;
+					sload_1;
+					putfield_b 22;		// boolean smartsystem/UsuarioImpl.ativo
+					return;
+		}
+
+		.method public .remote  getVCard()Lsmartsystem/IVCard; 8 {
+			.stack 1;
+			.locals 0;
+
+				L0:	getfield_a_this 21;		// reference smartsystem/UsuarioImpl.vCard
+					areturn;
+		}
+
+		.method private nextId(Lsmartsystem/Aplicacao;)B {
+			.stack 2;
+			.locals 5;
+
+				L0:	sconst_0;
+					sstore 6;
+				L1:	sconst_0;
+					sstore 5;
+				L2:	aload_1;
+					invokevirtual 79;		// getListaPreferencias()Lsmartsystem/ListaLigada;
+					astore_3;
+				L3:	sconst_1;
+					sstore 6;
+					aload_3;
+					invokevirtual 91;		// getPrimeiro()Lsmartsystem/No;
+					checkcast 0 77;		// T_CLASSORINTERFACE smartsystem/Preferencia
+					astore_2;
+				L4:	sconst_0;
+					sstore 4;
+				L5:	goto L9;
+				L6:	aload_2;
+					invokevirtual 80;		// getId()B
+					sload 5;
+					if_scmpne L8;
+				L7:	sconst_0;
+					sstore 6;
+					sload 5;
+					sconst_1;
+					sadd;
+					s2b;
+					sstore 5;
+					goto L10;
+				L8:	aload_3;
+					aload_2;
+					invokevirtual 98;		// getProximo(Lsmartsystem/No;)Lsmartsystem/No;
+					checkcast 0 77;		// T_CLASSORINTERFACE smartsystem/Preferencia
+					astore_2;
+					sload 4;
+					sconst_1;
+					sadd;
+					s2b;
+					sstore 4;
+				L9:	sload 4;
+					aload_3;
+					invokevirtual 105;		// getTamanho()B
+					if_scmplt L6;
+				L10:	sload 6;
+					ifeq L3;
+				L11:	sload 5;
+					sreturn;
+		}
+
+		.method public .remote  getPreferenciaNome(BB)[B 9 {
+			.stack 2;
+			.locals 4;
+
+				L0:	getfield_a_this 20;		// reference smartsystem/UsuarioImpl.gerente
+					sload_1;
+					invokevirtual 75;		// getAplicacao(B)Lsmartsystem/Aplicacao;
+					astore_3;
+				L1:	aload_3;
+					ifnonnull L3;
+				L2:	aconst_null;
+					areturn;
+				L3:	aload_3;
+					invokevirtual 79;		// getListaPreferencias()Lsmartsystem/ListaLigada;
+					astore 5;
+				L4:	aload 5;
+					invokevirtual 91;		// getPrimeiro()Lsmartsystem/No;
+					checkcast 0 77;		// T_CLASSORINTERFACE smartsystem/Preferencia
+					astore 4;
+				L5:	sconst_0;
+					sstore 6;
+				L6:	goto L10;
+				L7:	sload_2;
+					aload 4;
+					invokevirtual 80;		// getId()B
+					if_scmpne L9;
+				L8:	aload 4;
+					invokevirtual 83;		// getNome()[B
+					areturn;
+				L9:	aload 5;
+					aload 4;
+					invokevirtual 98;		// getProximo(Lsmartsystem/No;)Lsmartsystem/No;
+					checkcast 0 77;		// T_CLASSORINTERFACE smartsystem/Preferencia
+					astore 4;
+					sload 6;
+					sconst_1;
+					sadd;
+					s2b;
+					sstore 6;
+				L10:	sload 6;
+					aload 5;
+					invokevirtual 105;		// getTamanho()B
+					if_scmplt L7;
+				L11:	aconst_null;
+					areturn;
+		}
+
+		.method public .remote  getPreferenciaIds(B)[B 10 {
+			.stack 3;
+			.locals 5;
+
+				L0:	getfield_a_this 20;		// reference smartsystem/UsuarioImpl.gerente
+					sload_1;
+					invokevirtual 75;		// getAplicacao(B)Lsmartsystem/Aplicacao;
+					astore_2;
+				L1:	aload_2;
+					ifnonnull L3;
+				L2:	aconst_null;
+					areturn;
+				L3:	aload_2;
+					invokevirtual 79;		// getListaPreferencias()Lsmartsystem/ListaLigada;
+					astore 4;
+				L4:	aload 4;
+					invokevirtual 105;		// getTamanho()B
+					newarray 11;
+					astore 6;
+				L5:	aload 4;
+					invokevirtual 91;		// getPrimeiro()Lsmartsystem/No;
+					checkcast 0 77;		// T_CLASSORINTERFACE smartsystem/Preferencia
+					astore_3;
+				L6:	sconst_0;
+					sstore 5;
+				L7:	goto L9;
+				L8:	aload 6;
+					sload 5;
+					aload_3;
+					invokevirtual 80;		// getId()B
+					bastore;
+					aload 4;
+					aload_3;
+					invokevirtual 98;		// getProximo(Lsmartsystem/No;)Lsmartsystem/No;
+					checkcast 0 77;		// T_CLASSORINTERFACE smartsystem/Preferencia
+					astore_3;
+					sload 5;
+					sconst_1;
+					sadd;
+					s2b;
+					sstore 5;
+				L9:	sload 5;
+					aload 6;
+					arraylength;
+					if_scmplt L8;
+				L10:	aload 6;
+					areturn;
+		}
+
+	}
+
+	.class public VCardImpl 15 extends 2.5 {		// extends javacard/framework/service/CardRemoteObject
+
+		.remote;
+
+		.fields {
+			private byte[] title 0;		// [B
+			private byte[] foreName 1;		// [B
+			private byte[] middleName 2;		// [B
+			private byte[] surName 3;		// [B
+			private byte[] suffix 4;		// [B
+			private byte[] photoURL 5;		// [B
+			private byte[] birthDate 6;		// [B
+			private byte[] postOfficeAddress 7;		// [B
+			private byte[] buildingName 8;		// [B
+			private byte[] street 9;		// [B
+			private byte[] locality 10;		// [B
+			private byte[] region 11;		// [B
+			private byte[] postalCode 12;		// [B
+			private byte[] country 13;		// [B
+			private byte[] tel1 14;		// [B
+			private byte[] tel2 15;		// [B
+			private byte[] email1 16;		// [B
+			private byte[] email2 17;		// [B
+			private byte[] url 18;		// [B
+			private boolean[] addressType 19;		// [Z
+			private boolean[] tel1Type 20;		// [Z
+			private boolean[] tel2Type 21;		// [Z
+		}
+
+		.publicMethodTable 1 {
+			equals(Ljava/lang/Object;)Z;
+			getAddressType()[Z;
+			setAddressType([Z)V;
+			getBirthDate()[B;
+			setBirthDate([B)V;
+			getBuildingName()[B;
+			setBuildingName([B)V;
+			getCountry()[B;
+			setCountry([B)V;
+			getEmail1()[B;
+			setEmail1([B)V;
+			getEmail2()[B;
+			setEmail2([B)V;
+			getForeName()[B;
+			setForeName([B)V;
+			getLocality()[B;
+			setLocality([B)V;
+			getMiddleName()[B;
+			setMiddleName([B)V;
+			getPhotoURL()[B;
+			setPhotoURL([B)V;
+			getPostalCode()[B;
+			setPostalCode([B)V;
+			getPostOfficeAddress()[B;
+			setPostOfficeAddress([B)V;
+			getRegion()[B;
+			setRegion([B)V;
+			getStreet()[B;
+			setStreet([B)V;
+			getSuffix()[B;
+			setSuffix([B)V;
+			getSurName()[B;
+			setSurName([B)V;
+			getTel1()[B;
+			setTel1([B)V;
+			getTel1Type()[Z;
+			setTel1Type([Z)V;
+			getTel2()[B;
+			setTel2([B)V;
+			getTel2Type()[Z;
+			setTel2Type([Z)V;
+			getTitle()[B;
+			setTitle([B)V;
+			getUrl()[B;
+			setUrl([B)V;
+			limpar()V;
+		}
+
+		.packageMethodTable 0 {
+		}
+
+		.implementedInterfaceInfoTable { 
+			.interface 1.0 { 		// java/rmi/Remote
+			}
+
+			.interface IVCard { 
+				1;		// getAddressType()[Z
+				2;		// setAddressType([Z)V
+				3;		// getBirthDate()[B
+				4;		// setBirthDate([B)V
+				5;		// getBuildingName()[B
+				6;		// setBuildingName([B)V
+				7;		// getCountry()[B
+				8;		// setCountry([B)V
+				9;		// getEmail1()[B
+				10;		// setEmail1([B)V
+				11;		// getEmail2()[B
+				12;		// setEmail2([B)V
+				13;		// getForeName()[B
+				14;		// setForeName([B)V
+				15;		// getLocality()[B
+				16;		// setLocality([B)V
+				17;		// getMiddleName()[B
+				18;		// setMiddleName([B)V
+				19;		// getPhotoURL()[B
+				20;		// setPhotoURL([B)V
+				21;		// getPostalCode()[B
+				22;		// setPostalCode([B)V
+				23;		// getPostOfficeAddress()[B
+				24;		// setPostOfficeAddress([B)V
+				25;		// getRegion()[B
+				26;		// setRegion([B)V
+				27;		// getStreet()[B
+				28;		// setStreet([B)V
+				29;		// getSuffix()[B
+				30;		// setSuffix([B)V
+				31;		// getSurName()[B
+				32;		// setSurName([B)V
+				33;		// getTel1()[B
+				34;		// setTel1([B)V
+				35;		// getTel1Type()[Z
+				36;		// setTel1Type([Z)V
+				37;		// getTel2()[B
+				38;		// setTel2([B)V
+				39;		// getTel2Type()[Z
+				40;		// setTel2Type([Z)V
+				41;		// getTitle()[B
+				42;		// setTitle([B)V
+				43;		// getUrl()[B
+				44;		// setUrl([B)V
+			}
+
+		}
+
+		.implementedRemoteInterfaceInfoTable { 
+			.interface IVCard { 
+				getAddressType()[Z 1;		// getAddressType()[Z
+				setAddressType([Z)V 2;		// setAddressType([Z)V
+				getBirthDate()[B 3;		// getBirthDate()[B
+				setBirthDate([B)V 4;		// setBirthDate([B)V
+				getBuildingName()[B 5;		// getBuildingName()[B
+				setBuildingName([B)V 6;		// setBuildingName([B)V
+				getCountry()[B 7;		// getCountry()[B
+				setCountry([B)V 8;		// setCountry([B)V
+				getEmail1()[B 9;		// getEmail1()[B
+				setEmail1([B)V 10;		// setEmail1([B)V
+				getEmail2()[B 11;		// getEmail2()[B
+				setEmail2([B)V 12;		// setEmail2([B)V
+				getForeName()[B 13;		// getForeName()[B
+				setForeName([B)V 14;		// setForeName([B)V
+				getLocality()[B 15;		// getLocality()[B
+				setLocality([B)V 16;		// setLocality([B)V
+				getMiddleName()[B 17;		// getMiddleName()[B
+				setMiddleName([B)V 18;		// setMiddleName([B)V
+				getPhotoURL()[B 19;		// getPhotoURL()[B
+				setPhotoURL([B)V 20;		// setPhotoURL([B)V
+				getPostalCode()[B 21;		// getPostalCode()[B
+				setPostalCode([B)V 22;		// setPostalCode([B)V
+				getPostOfficeAddress()[B 23;		// getPostOfficeAddress()[B
+				setPostOfficeAddress([B)V 24;		// setPostOfficeAddress([B)V
+				getRegion()[B 25;		// getRegion()[B
+				setRegion([B)V 26;		// setRegion([B)V
+				getStreet()[B 27;		// getStreet()[B
+				setStreet([B)V 28;		// setStreet([B)V
+				getSuffix()[B 29;		// getSuffix()[B
+				setSuffix([B)V 30;		// setSuffix([B)V
+				getSurName()[B 31;		// getSurName()[B
+				setSurName([B)V 32;		// setSurName([B)V
+				getTel1()[B 33;		// getTel1()[B
+				setTel1([B)V 34;		// setTel1([B)V
+				getTel1Type()[Z 35;		// getTel1Type()[Z
+				setTel1Type([Z)V 36;		// setTel1Type([Z)V
+				getTel2()[B 37;		// getTel2()[B
+				setTel2([B)V 38;		// setTel2([B)V
+				getTel2Type()[Z 39;		// getTel2Type()[Z
+				setTel2Type([Z)V 40;		// setTel2Type([Z)V
+				getTitle()[B 41;		// getTitle()[B
+				setTitle([B)V 42;		// setTitle([B)V
+				getUrl()[B 43;		// getUrl()[B
+				setUrl([B)V 44;		// setUrl([B)V
+			}
+
+		}
+
+		.method public <init>()V 0 {
+			.stack 1;
+			.locals 0;
+
+				L0:	aload_0;
+					invokespecial 51;		// javacard/framework/service/CardRemoteObject.<init>()V
+					return;
+		}
+
+		.method public <init>([B[B[B[B[B[B[B[B[B[B[B[B[B[B[B[B[B[B[B[Z[Z[Z)V 1 {
+			.stack 2;
+			.locals 0;
+
+				L0:	aload_0;
+					invokespecial 51;		// javacard/framework/service/CardRemoteObject.<init>()V
+					aload_0;
+					aload_1;
+					putfield_a 23;		// reference smartsystem/VCardImpl.title
+					aload_0;
+					aload_2;
+					putfield_a 24;		// reference smartsystem/VCardImpl.foreName
+					aload_0;
+					aload_3;
+					putfield_a 25;		// reference smartsystem/VCardImpl.middleName
+					aload_0;
+					aload 4;
+					putfield_a 26;		// reference smartsystem/VCardImpl.surName
+					aload_0;
+					aload 5;
+					putfield_a 27;		// reference smartsystem/VCardImpl.suffix
+					aload_0;
+					aload 6;
+					putfield_a 28;		// reference smartsystem/VCardImpl.photoURL
+					aload_0;
+					aload 7;
+					putfield_a 29;		// reference smartsystem/VCardImpl.birthDate
+					aload_0;
+					aload 8;
+					putfield_a 30;		// reference smartsystem/VCardImpl.postOfficeAddress
+					aload_0;
+					aload 9;
+					putfield_a 31;		// reference smartsystem/VCardImpl.buildingName
+					aload_0;
+					aload 10;
+					putfield_a 32;		// reference smartsystem/VCardImpl.street
+					aload_0;
+					aload 11;
+					putfield_a 33;		// reference smartsystem/VCardImpl.locality
+					aload_0;
+					aload 12;
+					putfield_a 34;		// reference smartsystem/VCardImpl.region
+					aload_0;
+					aload 13;
+					putfield_a 35;		// reference smartsystem/VCardImpl.postalCode
+					aload_0;
+					aload 14;
+					putfield_a 36;		// reference smartsystem/VCardImpl.country
+					aload_0;
+					aload 15;
+					putfield_a 37;		// reference smartsystem/VCardImpl.tel1
+					aload_0;
+					aload 16;
+					putfield_a 38;		// reference smartsystem/VCardImpl.tel2
+					aload_0;
+					aload 17;
+					putfield_a 39;		// reference smartsystem/VCardImpl.email1
+					aload_0;
+					aload 18;
+					putfield_a 40;		// reference smartsystem/VCardImpl.email2
+					aload_0;
+					aload 19;
+					putfield_a 41;		// reference smartsystem/VCardImpl.url
+					aload_0;
+					aload 20;
+					putfield_a 42;		// reference smartsystem/VCardImpl.addressType
+					aload_0;
+					aload 21;
+					putfield_a 43;		// reference smartsystem/VCardImpl.tel1Type
+					aload_0;
+					aload 22;
+					putfield_a 44;		// reference smartsystem/VCardImpl.tel2Type
+					return;
+		}
+
+		.method public .remote  getAddressType()[Z 1 {
+			.stack 1;
+			.locals 0;
+
+				L0:	getfield_a_this 42;		// reference smartsystem/VCardImpl.addressType
+					areturn;
+		}
+
+		.method public .remote  setAddressType([Z)V 2 {
+			.stack 2;
+			.locals 0;
+
+				L0:	aload_1;
+					ifnull L2;
+				L1:	aconst_null;
+					checkcast 10 0;		// T_BOOLEAN
+					astore_1;
+					invokestatic 106;		// javacard/framework/JCSystem.requestObjectDeletion()V
+				L2:	aload_0;
+					aload_1;
+					putfield_a 42;		// reference smartsystem/VCardImpl.addressType
+					return;
+		}
+
+		.method public .remote  getBirthDate()[B 3 {
+			.stack 1;
+			.locals 0;
+
+				L0:	getfield_a_this 29;		// reference smartsystem/VCardImpl.birthDate
+					areturn;
+		}
+
+		.method public .remote  setBirthDate([B)V 4 {
+			.stack 2;
+			.locals 0;
+
+				L0:	aload_1;
+					ifnull L2;
+				L1:	aconst_null;
+					checkcast 11 0;		// T_BYTE
+					astore_1;
+					invokestatic 106;		// javacard/framework/JCSystem.requestObjectDeletion()V
+				L2:	aload_0;
+					aload_1;
+					putfield_a 29;		// reference smartsystem/VCardImpl.birthDate
+					return;
+		}
+
+		.method public .remote  getBuildingName()[B 5 {
+			.stack 1;
+			.locals 0;
+
+				L0:	getfield_a_this 31;		// reference smartsystem/VCardImpl.buildingName
+					areturn;
+		}
+
+		.method public .remote  setBuildingName([B)V 6 {
+			.stack 2;
+			.locals 0;
+
+				L0:	aload_1;
+					ifnull L2;
+				L1:	aconst_null;
+					checkcast 11 0;		// T_BYTE
+					astore_1;
+					invokestatic 106;		// javacard/framework/JCSystem.requestObjectDeletion()V
+				L2:	aload_0;
+					aload_1;
+					putfield_a 31;		// reference smartsystem/VCardImpl.buildingName
+					return;
+		}
+
+		.method public .remote  getCountry()[B 7 {
+			.stack 1;
+			.locals 0;
+
+				L0:	getfield_a_this 36;		// reference smartsystem/VCardImpl.country
+					areturn;
+		}
+
+		.method public .remote  setCountry([B)V 8 {
+			.stack 2;
+			.locals 0;
+
+				L0:	aload_1;
+					ifnull L2;
+				L1:	aconst_null;
+					checkcast 11 0;		// T_BYTE
+					astore_1;
+					invokestatic 106;		// javacard/framework/JCSystem.requestObjectDeletion()V
+				L2:	aload_0;
+					aload_1;
+					putfield_a 36;		// reference smartsystem/VCardImpl.country
+					return;
+		}
+
+		.method public .remote  getEmail1()[B 9 {
+			.stack 1;
+			.locals 0;
+
+				L0:	getfield_a_this 39;		// reference smartsystem/VCardImpl.email1
+					areturn;
+		}
+
+		.method public .remote  setEmail1([B)V 10 {
+			.stack 2;
+			.locals 0;
+
+				L0:	aload_1;
+					ifnull L2;
+				L1:	aconst_null;
+					checkcast 11 0;		// T_BYTE
+					astore_1;
+					invokestatic 106;		// javacard/framework/JCSystem.requestObjectDeletion()V
+				L2:	aload_0;
+					aload_1;
+					putfield_a 39;		// reference smartsystem/VCardImpl.email1
+					return;
+		}
+
+		.method public .remote  getEmail2()[B 11 {
+			.stack 1;
+			.locals 0;
+
+				L0:	getfield_a_this 40;		// reference smartsystem/VCardImpl.email2
+					areturn;
+		}
+
+		.method public .remote  setEmail2([B)V 12 {
+			.stack 2;
+			.locals 0;
+
+				L0:	aload_1;
+					ifnull L2;
+				L1:	aconst_null;
+					checkcast 11 0;		// T_BYTE
+					astore_1;
+					invokestatic 106;		// javacard/framework/JCSystem.requestObjectDeletion()V
+				L2:	aload_0;
+					aload_1;
+					putfield_a 40;		// reference smartsystem/VCardImpl.email2
+					return;
+		}
+
+		.method public .remote  getForeName()[B 13 {
+			.stack 1;
+			.locals 0;
+
+				L0:	getfield_a_this 24;		// reference smartsystem/VCardImpl.foreName
+					areturn;
+		}
+
+		.method public .remote  setForeName([B)V 14 {
+			.stack 2;
+			.locals 0;
+
+				L0:	aload_1;
+					ifnull L2;
+				L1:	aconst_null;
+					checkcast 11 0;		// T_BYTE
+					astore_1;
+					invokestatic 106;		// javacard/framework/JCSystem.requestObjectDeletion()V
+				L2:	aload_0;
+					aload_1;
+					putfield_a 24;		// reference smartsystem/VCardImpl.foreName
+					return;
+		}
+
+		.method public .remote  getLocality()[B 15 {
+			.stack 1;
+			.locals 0;
+
+				L0:	getfield_a_this 33;		// reference smartsystem/VCardImpl.locality
+					areturn;
+		}
+
+		.method public .remote  setLocality([B)V 16 {
+			.stack 2;
+			.locals 0;
+
+				L0:	aload_1;
+					ifnull L2;
+				L1:	aconst_null;
+					checkcast 11 0;		// T_BYTE
+					astore_1;
+					invokestatic 106;		// javacard/framework/JCSystem.requestObjectDeletion()V
+				L2:	aload_0;
+					aload_1;
+					putfield_a 33;		// reference smartsystem/VCardImpl.locality
+					return;
+		}
+
+		.method public .remote  getMiddleName()[B 17 {
+			.stack 1;
+			.locals 0;
+
+				L0:	getfield_a_this 25;		// reference smartsystem/VCardImpl.middleName
+					areturn;
+		}
+
+		.method public .remote  setMiddleName([B)V 18 {
+			.stack 2;
+			.locals 0;
+
+				L0:	aload_1;
+					ifnull L2;
+				L1:	aconst_null;
+					checkcast 11 0;		// T_BYTE
+					astore_1;
+					invokestatic 106;		// javacard/framework/JCSystem.requestObjectDeletion()V
+				L2:	aload_0;
+					aload_1;
+					putfield_a 25;		// reference smartsystem/VCardImpl.middleName
+					return;
+		}
+
+		.method public .remote  getPhotoURL()[B 19 {
+			.stack 1;
+			.locals 0;
+
+				L0:	getfield_a_this 28;		// reference smartsystem/VCardImpl.photoURL
+					areturn;
+		}
+
+		.method public .remote  setPhotoURL([B)V 20 {
+			.stack 2;
+			.locals 0;
+
+				L0:	aload_1;
+					ifnull L2;
+				L1:	aconst_null;
+					checkcast 11 0;		// T_BYTE
+					astore_1;
+					invokestatic 106;		// javacard/framework/JCSystem.requestObjectDeletion()V
+				L2:	aload_0;
+					aload_1;
+					putfield_a 28;		// reference smartsystem/VCardImpl.photoURL
+					return;
+		}
+
+		.method public .remote  getPostalCode()[B 21 {
+			.stack 1;
+			.locals 0;
+
+				L0:	getfield_a_this 35;		// reference smartsystem/VCardImpl.postalCode
+					areturn;
+		}
+
+		.method public .remote  setPostalCode([B)V 22 {
+			.stack 2;
+			.locals 0;
+
+				L0:	aload_1;
+					ifnull L2;
+				L1:	aconst_null;
+					checkcast 11 0;		// T_BYTE
+					astore_1;
+					invokestatic 106;		// javacard/framework/JCSystem.requestObjectDeletion()V
+				L2:	aload_0;
+					aload_1;
+					putfield_a 35;		// reference smartsystem/VCardImpl.postalCode
+					return;
+		}
+
+		.method public .remote  getPostOfficeAddress()[B 23 {
+			.stack 1;
+			.locals 0;
+
+				L0:	getfield_a_this 30;		// reference smartsystem/VCardImpl.postOfficeAddress
+					areturn;
+		}
+
+		.method public .remote  setPostOfficeAddress([B)V 24 {
+			.stack 2;
+			.locals 0;
+
+				L0:	aload_1;
+					ifnull L2;
+				L1:	aconst_null;
+					checkcast 11 0;		// T_BYTE
+					astore_1;
+					invokestatic 106;		// javacard/framework/JCSystem.requestObjectDeletion()V
+				L2:	aload_0;
+					aload_1;
+					putfield_a 30;		// reference smartsystem/VCardImpl.postOfficeAddress
+					return;
+		}
+
+		.method public .remote  getRegion()[B 25 {
+			.stack 1;
+			.locals 0;
+
+				L0:	getfield_a_this 34;		// reference smartsystem/VCardImpl.region
+					areturn;
+		}
+
+		.method public .remote  setRegion([B)V 26 {
+			.stack 2;
+			.locals 0;
+
+				L0:	aload_1;
+					ifnull L2;
+				L1:	aconst_null;
+					checkcast 11 0;		// T_BYTE
+					astore_1;
+					invokestatic 106;		// javacard/framework/JCSystem.requestObjectDeletion()V
+				L2:	aload_0;
+					aload_1;
+					putfield_a 34;		// reference smartsystem/VCardImpl.region
+					return;
+		}
+
+		.method public .remote  getStreet()[B 27 {
+			.stack 1;
+			.locals 0;
+
+				L0:	getfield_a_this 32;		// reference smartsystem/VCardImpl.street
+					areturn;
+		}
+
+		.method public .remote  setStreet([B)V 28 {
+			.stack 2;
+			.locals 0;
+
+				L0:	aload_1;
+					ifnull L2;
+				L1:	aconst_null;
+					checkcast 11 0;		// T_BYTE
+					astore_1;
+					invokestatic 106;		// javacard/framework/JCSystem.requestObjectDeletion()V
+				L2:	aload_0;
+					aload_1;
+					putfield_a 32;		// reference smartsystem/VCardImpl.street
+					return;
+		}
+
+		.method public .remote  getSuffix()[B 29 {
+			.stack 1;
+			.locals 0;
+
+				L0:	getfield_a_this 27;		// reference smartsystem/VCardImpl.suffix
+					areturn;
+		}
+
+		.method public .remote  setSuffix([B)V 30 {
+			.stack 2;
+			.locals 0;
+
+				L0:	aload_1;
+					ifnull L2;
+				L1:	aconst_null;
+					checkcast 11 0;		// T_BYTE
+					astore_1;
+					invokestatic 106;		// javacard/framework/JCSystem.requestObjectDeletion()V
+				L2:	aload_0;
+					aload_1;
+					putfield_a 27;		// reference smartsystem/VCardImpl.suffix
+					return;
+		}
+
+		.method public .remote  getSurName()[B 31 {
+			.stack 1;
+			.locals 0;
+
+				L0:	getfield_a_this 26;		// reference smartsystem/VCardImpl.surName
+					areturn;
+		}
+
+		.method public .remote  setSurName([B)V 32 {
+			.stack 2;
+			.locals 0;
+
+				L0:	aload_1;
+					ifnull L2;
+				L1:	aconst_null;
+					checkcast 11 0;		// T_BYTE
+					astore_1;
+					invokestatic 106;		// javacard/framework/JCSystem.requestObjectDeletion()V
+				L2:	aload_0;
+					aload_1;
+					putfield_a 26;		// reference smartsystem/VCardImpl.surName
+					return;
+		}
+
+		.method public .remote  getTel1()[B 33 {
+			.stack 1;
+			.locals 0;
+
+				L0:	getfield_a_this 37;		// reference smartsystem/VCardImpl.tel1
+					areturn;
+		}
+
+		.method public .remote  setTel1([B)V 34 {
+			.stack 2;
+			.locals 0;
+
+				L0:	aload_1;
+					ifnull L2;
+				L1:	aconst_null;
+					checkcast 11 0;		// T_BYTE
+					astore_1;
+					invokestatic 106;		// javacard/framework/JCSystem.requestObjectDeletion()V
+				L2:	aload_0;
+					aload_1;
+					putfield_a 37;		// reference smartsystem/VCardImpl.tel1
+					return;
+		}
+
+		.method public .remote  getTel1Type()[Z 35 {
+			.stack 1;
+			.locals 0;
+
+				L0:	getfield_a_this 43;		// reference smartsystem/VCardImpl.tel1Type
+					areturn;
+		}
+
+		.method public .remote  setTel1Type([Z)V 36 {
+			.stack 2;
+			.locals 0;
+
+				L0:	aload_1;
+					ifnull L2;
+				L1:	aconst_null;
+					checkcast 10 0;		// T_BOOLEAN
+					astore_1;
+					invokestatic 106;		// javacard/framework/JCSystem.requestObjectDeletion()V
+				L2:	aload_0;
+					aload_1;
+					putfield_a 43;		// reference smartsystem/VCardImpl.tel1Type
+					return;
+		}
+
+		.method public .remote  getTel2()[B 37 {
+			.stack 1;
+			.locals 0;
+
+				L0:	getfield_a_this 38;		// reference smartsystem/VCardImpl.tel2
+					areturn;
+		}
+
+		.method public .remote  setTel2([B)V 38 {
+			.stack 2;
+			.locals 0;
+
+				L0:	aload_1;
+					ifnull L2;
+				L1:	aconst_null;
+					checkcast 11 0;		// T_BYTE
+					astore_1;
+					invokestatic 106;		// javacard/framework/JCSystem.requestObjectDeletion()V
+				L2:	aload_0;
+					aload_1;
+					putfield_a 38;		// reference smartsystem/VCardImpl.tel2
+					return;
+		}
+
+		.method public .remote  getTel2Type()[Z 39 {
+			.stack 1;
+			.locals 0;
+
+				L0:	getfield_a_this 44;		// reference smartsystem/VCardImpl.tel2Type
+					areturn;
+		}
+
+		.method public .remote  setTel2Type([Z)V 40 {
+			.stack 2;
+			.locals 0;
+
+				L0:	aload_1;
+					ifnull L2;
+				L1:	aconst_null;
+					checkcast 10 0;		// T_BOOLEAN
+					astore_1;
+					invokestatic 106;		// javacard/framework/JCSystem.requestObjectDeletion()V
+				L2:	aload_0;
+					aload_1;
+					putfield_a 44;		// reference smartsystem/VCardImpl.tel2Type
+					return;
+		}
+
+		.method public .remote  getTitle()[B 41 {
+			.stack 1;
+			.locals 0;
+
+				L0:	getfield_a_this 23;		// reference smartsystem/VCardImpl.title
+					areturn;
+		}
+
+		.method public .remote  setTitle([B)V 42 {
+			.stack 2;
+			.locals 0;
+
+				L0:	aload_1;
+					ifnull L2;
+				L1:	aconst_null;
+					checkcast 11 0;		// T_BYTE
+					astore_1;
+					invokestatic 106;		// javacard/framework/JCSystem.requestObjectDeletion()V
+				L2:	aload_0;
+					aload_1;
+					putfield_a 23;		// reference smartsystem/VCardImpl.title
+					return;
+		}
+
+		.method public .remote  getUrl()[B 43 {
+			.stack 1;
+			.locals 0;
+
+				L0:	getfield_a_this 41;		// reference smartsystem/VCardImpl.url
+					areturn;
+		}
+
+		.method public .remote  setUrl([B)V 44 {
+			.stack 2;
+			.locals 0;
+
+				L0:	aload_1;
+					ifnull L2;
+				L1:	aconst_null;
+					checkcast 11 0;		// T_BYTE
+					astore_1;
+					invokestatic 106;		// javacard/framework/JCSystem.requestObjectDeletion()V
+				L2:	aload_0;
+					aload_1;
+					putfield_a 41;		// reference smartsystem/VCardImpl.url
+					return;
+		}
+
+		.method public limpar()V 45 {
+			.stack 2;
+			.locals 0;
+
+				L0:	aload_0;
+					aconst_null;
+					putfield_a 23;		// reference smartsystem/VCardImpl.title
+					aload_0;
+					aconst_null;
+					putfield_a 24;		// reference smartsystem/VCardImpl.foreName
+					aload_0;
+					aconst_null;
+					putfield_a 25;		// reference smartsystem/VCardImpl.middleName
+					aload_0;
+					aconst_null;
+					putfield_a 26;		// reference smartsystem/VCardImpl.surName
+					aload_0;
+					aconst_null;
+					putfield_a 27;		// reference smartsystem/VCardImpl.suffix
+					aload_0;
+					aconst_null;
+					putfield_a 28;		// reference smartsystem/VCardImpl.photoURL
+					aload_0;
+					aconst_null;
+					putfield_a 29;		// reference smartsystem/VCardImpl.birthDate
+					aload_0;
+					aconst_null;
+					putfield_a 30;		// reference smartsystem/VCardImpl.postOfficeAddress
+					aload_0;
+					aconst_null;
+					putfield_a 31;		// reference smartsystem/VCardImpl.buildingName
+					aload_0;
+					aconst_null;
+					putfield_a 32;		// reference smartsystem/VCardImpl.street
+					aload_0;
+					aconst_null;
+					putfield_a 33;		// reference smartsystem/VCardImpl.locality
+					aload_0;
+					aconst_null;
+					putfield_a 34;		// reference smartsystem/VCardImpl.region
+					aload_0;
+					aconst_null;
+					putfield_a 35;		// reference smartsystem/VCardImpl.postalCode
+					aload_0;
+					aconst_null;
+					putfield_a 36;		// reference smartsystem/VCardImpl.country
+					aload_0;
+					aconst_null;
+					putfield_a 37;		// reference smartsystem/VCardImpl.tel1
+					aload_0;
+					aconst_null;
+					putfield_a 38;		// reference smartsystem/VCardImpl.tel2
+					aload_0;
+					aconst_null;
+					putfield_a 39;		// reference smartsystem/VCardImpl.email1
+					aload_0;
+					aconst_null;
+					putfield_a 40;		// reference smartsystem/VCardImpl.email2
+					aload_0;
+					aconst_null;
+					putfield_a 41;		// reference smartsystem/VCardImpl.url
+					aload_0;
+					aconst_null;
+					putfield_a 42;		// reference smartsystem/VCardImpl.addressType
+					aload_0;
+					aconst_null;
+					putfield_a 43;		// reference smartsystem/VCardImpl.tel1Type
+					aload_0;
+					aconst_null;
+					putfield_a 44;		// reference smartsystem/VCardImpl.tel2Type
+					invokestatic 106;		// javacard/framework/JCSystem.requestObjectDeletion()V
+					return;
+		}
+
+	}
+
+}
